@@ -2,12 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 const Box = styled.div`
+  /* display: ${(props) => props.state === false && "none"}; // 이런식으로 */
   width: 220px;
-  height: 770px;
+  height: 100%
+
+  /* left: -270px; */
   position: fixed;
   padding: 20px 30px;
   /* font-family: "Releway", sans-serif; */
   color: ${(props) => props.theme.HeaderBackground};
+  /* transform: ${(props) => props.state === true && "translate(270px)"}; */
   @media only screen and(min-width: 1024) {
   }
   background-color: ${(props) => props.theme.MenuBackground};
@@ -87,9 +91,13 @@ const CloseText = styled.div`
   transform: rotate(-45deg);
 `;
 
-const Menu = () => {
+const Menu = ({ setState }) => {
   return (
-    <Box>
+    <Box
+      onMouseEnter={() => setState(true)}
+      onMouseLeave={() => setState(false)}
+      // onMouseOver={() => console.log("확인")}
+    >
       <BoxInner>
         <TitleBox>
           <TitleDiv>WowWay</TitleDiv>
