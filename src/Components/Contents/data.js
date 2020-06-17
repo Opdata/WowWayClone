@@ -2,7 +2,7 @@ export default [
   { id: 0, img: "black", tag: "one" },
   { id: 1, img: "white", tag: "two" },
   { id: 2, img: "blue", tag: "three" },
-  { id: 3, img: "grey", tag: "four" },
+  { id: 3, img: "darkgrey", tag: "four" },
   { id: 4, img: "lightgrey", tag: "five" },
   { id: 5, img: "green", tag: "one" },
   { id: 6, img: "yellow", tag: "two" },

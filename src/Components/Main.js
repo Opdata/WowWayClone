@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { InnerWidth } from "../Hooks/SizeHooks";
+// import { InnerWidth } from "../Hooks/SizeHooks";
 import Menu from "./Menu/Menu";
 import Content from "./Contents/Contents";
 const Wrapper = styled.div`
@@ -13,9 +13,10 @@ const Wrapper = styled.div`
 
 const Main = () => {
   const [state, setState] = useState(false);
-  const Width = InnerWidth();
+  // const width = InnerWidth();
+
   return (
-    <Wrapper Width={Width}>
+    <Wrapper>
       <Menu state={state} setState={setState} />
       <Content state={state} />
     </Wrapper>

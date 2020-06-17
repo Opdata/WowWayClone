@@ -1,26 +1,20 @@
 import { useState, useEffect } from "react";
 
-const getWidth = () => {
-  // const width = window.innerWidth;
-  const width = document.body.clientWidth;
-
-  return width;
-};
-
-export const InnerWidth = () => {
-  const [width, setWidth] = useState(getWidth());
+export default (Ref) => {
+  const [width, setWidth] = useState();
 
   useEffect(() => {
     const WidthState = () => {
-      setWidth(getWidth());
+      setWidth(Ref.current.clientWidth);
     };
-
+    window.addEventListener("load", WidthState);
     window.addEventListener("resize", WidthState);
 
     return () => {
+      window.removeEventListener("load", WidthState);
       window.removeEventListener("resize", WidthState);
     };
-  }, []);
+  }, [Ref]);
 
   return width;
 };
