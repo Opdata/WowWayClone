@@ -5,13 +5,16 @@ export default (Ref) => {
 
   useEffect(() => {
     const WidthState = () => {
-      setWidth(Ref.current.clientWidth);
+      setWidth(document.body.clientWidth);
     };
-    window.addEventListener("load", WidthState);
+
+    if (document.body.clientHeight > window.innerHeight) {
+      setWidth(document.body.clientWidth);
+    }
+
     window.addEventListener("resize", WidthState);
 
     return () => {
-      window.removeEventListener("load", WidthState);
       window.removeEventListener("resize", WidthState);
     };
   }, [Ref]);

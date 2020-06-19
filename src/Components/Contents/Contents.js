@@ -7,10 +7,12 @@ import Data from "./data";
 
 const Box = styled.div`
   /*  */
-  width: 100%;
-  height: 100%;
+  width: ${(props) => props.width - 10}px;
+  min-height: 1000px;
+  /* height: 100%; */
   /* padding-right: -10px; */
-
+  margin-left: 10px;
+  background-color: red;
   transform: ${(props) => props.state === true && "translateX(280px)"};
   transition: transform 0.8s;
   /* z-index: 3; */
@@ -18,17 +20,17 @@ const Box = styled.div`
 
 const ContentBox = styled.div`
   display: flex;
-  margin-left: 10px;
-  width: ${(props) => props.width - 10}px;
-  height: ${(props) => (props.width - 10) * 0.75}px;
+  width: 100%;
+  height: 100%;
+  /* margin-left: 10px; */
   background-color: grey;
 `;
 
 const ContentDiv = styled.div`
   /* row col */
   position: absolute;
-  width: ${(props) => props.width}px;
-  height: ${(props) => props.height}px;
+  width: ${(props) => props.width - 10}px;
+  /* height: ${(props) => props.height}px; */
   /* top: ${(props) => props.row * props.height + 70}px; */
   /* left: ${(props) => props.col * props.width}px; */
   transform: translateX(${(props) => props.col * props.width}px);
@@ -54,6 +56,7 @@ const TextDiv = styled.div`
 const Content = ({ state, setState }) => {
   const ref = useRef(null);
   const Width = ElementWidth(ref);
+  console.log(Width);
   const ColCount = 4;
   let RowNumber = 0;
   let ColWidth;
@@ -66,11 +69,11 @@ const Content = ({ state, setState }) => {
   }
 
   return (
-    <Box ref={ref} state={state}>
+    <Box ref={ref} state={state} width={Width}>
       <Header state={state} setState={setState} />
 
       {ref && ColWidth && ColHeight && (
-        <ContentBox width={Width}>
+        <ContentBox>
           {Data.map((data, index) => {
             if (index < 4) {
               const ColNumber = index % ColCount; // 나머지
