@@ -8,16 +8,15 @@ const Box = styled.div`
   display: flex;
   padding-right: 10px;
   transform: translateX(${(props) => (props.state ? "0px" : "-280px")});
-  transition: transform 0.8s;
-  z-index: 1;
+  transition: transform 0.6s;
+  z-index: 3;
 `;
 
 const MenuDiv = styled.div`
-  /* position: relative; */
   width: 100%;
   height: 100%;
-  background-color: black;
-  z-index: 2;
+  background-color: ${(props) => props.theme.MenuBackground};
+  z-index: 4;
 `;
 
 const Menu = ({ state, setState }) => {

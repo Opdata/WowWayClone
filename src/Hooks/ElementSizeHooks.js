@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default (Ref) => {
+export default () => {
   const [width, setWidth] = useState();
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default (Ref) => {
     return () => {
       window.removeEventListener("resize", WidthState);
     };
-  }, [Ref]);
+  }, []);
 
   return width;
 };

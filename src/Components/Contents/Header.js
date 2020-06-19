@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import Data from "../Contents/data";
 
 const Box = styled.div`
   width: 100%;
   height: 70px;
   /* margin-left: 10px; */
-  background-color: green;
+  background-color: ${(props) => props.theme.HeaderBackground};
 `;
 
-const Header = ({ state, setState }) => {
-  return <Box onClick={() => setState(!state)}>{/*  */}</Box>;
+const Header = ({ sort }) => {
+  return <Box onClick={() => sort()}>{/*  */}</Box>;
 };
 
 export default Header;
