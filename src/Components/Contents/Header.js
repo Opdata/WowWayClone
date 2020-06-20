@@ -9,8 +9,8 @@ const Box = styled.div`
   background-color: ${(props) => props.theme.HeaderBackground};
 `;
 
-const Header = ({ sort }) => {
-  return <Box onClick={() => sort()}>{/*  */}</Box>;
+const Header = ({ tag, setTag }) => {
+  return <Box onClick={() => setTag(tag + 1)}>{/*  */}</Box>;
 };
 
 export default Header;

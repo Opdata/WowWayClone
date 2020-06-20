@@ -7,8 +7,8 @@ const Box = styled.div`
   background-color: ${(props) => props.theme.HeaderBackground};
 `;
 
-const Footer = ({ tag, setTag }) => {
-  return <Box onClick={() => setTag(tag + 1)}></Box>;
+const Footer = () => {
+  return <Box></Box>;
 };
 
 export default Footer;
