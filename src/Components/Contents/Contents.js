@@ -29,16 +29,13 @@ const ContentDiv = styled.div`
   position: absolute;
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
-  /* transform: translate(
-    ${(props) => props.x * props.width}px,
-    ${(props) => props.y * props.height}px
-  ); */
-
   transform: translate(
-     ${(props) => (props.x + props.remainder) * props.width}px,
-    ${(props) => (props.y + props.quotient) * props.height}px 
+    ${(props) => ((props.number % props.cardcount) - props.re) * props.width}px,
+    ${(props) =>
+      (parseInt(props.number / props.cardcount) - props.quo) *
+      props.width *
+      0.75}px
   );
-  // 여기만 해결하면됨
 
   transition-property: transform;
   transition-duration: 0.6s;
@@ -156,7 +153,7 @@ const Content = ({ state }) => {
       }
     });
     result = emptyArray.concat(CopyArray);
-    // console.log(result);
+    console.log(result);
   };
 
   sort();
@@ -164,62 +161,83 @@ const Content = ({ state }) => {
     <Box state={state} width={Width}>
       <Header tag={tag} setTag={setTag} />
       <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
-        {result.map((data, index) => {
-          let Number = 0;
-          let quotient = 0;
-          let remainder = 0;
-          if (index !== data.id && Width !== undefined) {
-            Number = Math.abs(index - data.id);
-            quotient = parseInt(Number / CardCount); // 몫
-            remainder = parseInt(Number % CardCount); // 나머지
-            if (data.id > index) {
-              // 7 => 2
-              // console.log("진입2");
-              // console.log("전 :", quotient, remainder);
-              quotient = -quotient;
-              remainder = -remainder;
-              // console.log(quotient, remainder);
-            } else if (data.id < index) {
-              // console.log("진입3");
-              quotient = quotient;
-              remainder = remainder;
-            }
-            console.log("fasdf :", Number, quotient, remainder);
-          }
+        {Width !== undefined &&
+          result.map((data, index) => {
+            let Number = 0;
+            let quotient = 0;
+            let remainder = 0;
 
-          const ColNumber = index % CardCount; // 나머지
-          if (ColNumber === 0 && index >= CardCount) {
-            RowNumber++;
-          }
-          return (
-            <ContentDiv
-              key={index}
-              width={CardWidth}
-              height={CardHeight}
-              y={RowNumber}
-              x={String(ColNumber)}
-              quo={quotient}
-              re={remainder}
-              card={CardCount}
-              number={Number}
-            >
-              <ImgBox className={"imgbox"} color={data.img} />
-              <TextBox className={"textbox"}>
-                <TextDiv
-                  style={{ padding: 5 }}
-                  fontsize={18}
-                  color={"white"}
-                  weight={700}
-                >
-                  {data.Text}
-                </TextDiv>
-                <TextDiv fontsize={12} color={"#737373"} weight={400}>
-                  {data.SubText}
-                </TextDiv>
-              </TextBox>
-            </ContentDiv>
-          );
-        })}
+            if (index !== data.id) {
+              // Number = index - data.id;
+              // console.log("같지않을떄 index, data.id : ", index, data.id);
+              // quotient = parseInt(Number / CardCount); // 몫
+              // remainder = parseInt(Number % CardCount); // 나머지
+              // if ((data.id % CardCount) + remainder >= 4) {
+              //   quotient += 1;
+              // }
+              // if (index < data.id && data.id % CardCount === 0) {
+              //   quotient -= 1;
+              //   remainder = parseInt(data.id / CardCount);
+              // }
+              // console.log("차이, 몫, 나머지 :", Number, quotient, remainder);
+              console.log("같지않을떄 index, data.id : ", index, data.id);
+              const indexQuo = parseInt(index / CardCount);
+              const indexRe = index % CardCount;
+              console.log("index 몫 나머지", indexQuo, indexRe);
+              const dataQuo = parseInt(data.id / CardCount);
+              const dataRe = data.id % CardCount;
+              console.log("data 몫, 나머지", dataQuo, dataRe);
+              if (index > data.id) {
+                //
+                Number = index;
+                quotient = indexQuo - dataQuo;
+                remainder = indexRe - dataRe;
+              } else if (index < data.id) {
+                //
+                Number = data.id;
+                quotient = dataQuo - indexQuo;
+                remainder = dataRe - indexRe;
+              }
+              console.log(
+                "조건 후 Number 몫 나머지",
+                Number,
+                quotient,
+                remainder
+              );
+            } else {
+              // console.log(index, data.id);
+              // console.log("같을떄");
+            }
+
+            return (
+              <ContentDiv
+                key={index}
+                width={CardWidth}
+                height={CardHeight}
+                cardcount={CardCount}
+                quo={quotient}
+                re={remainder}
+                number={Number}
+              >
+                <ImgBox className={"imgbox"} color={data.img}>
+                  {data.id}
+                </ImgBox>
+                <TextBox className={"textbox"}>
+                  <TextDiv
+                    style={{ padding: 5 }}
+                    fontsize={18}
+                    color={"white"}
+                    weight={700}
+                  >
+                    {data.Text}
+                  </TextDiv>
+                  <TextDiv fontsize={12} color={"#737373"} weight={400}>
+                    {data.SubText}
+                  </TextDiv>
+                </TextBox>
+              </ContentDiv>
+            );
+          })}
       </ContentBox>
       <Footer />
     </Box>
