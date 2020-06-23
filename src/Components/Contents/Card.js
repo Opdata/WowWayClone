@@ -12,8 +12,7 @@ const ContentDiv = styled.div`
     ${(props) => parseInt(props.sortIndex / props.cardCount) * props.height}px
   );
   opacity: 0.75;
-  transition-property: opacity transform;
-  transition-duration: opacity 0.4s transform 0.6s;
+  transition: opacity 0.4s, transform 0.6s;
 
   cursor: pointer;
 
@@ -23,16 +22,14 @@ const ContentDiv = styled.div`
     .imgbox {
       /* z-index: 1; */
       transform: translateY(-70px);
-      transition-property: transform;
-      transition-duration: 0.6s;
+      transition: transform 0.6s;
     }
     .textbox {
       /* z-index: 2; */
       transform: translateY(70px);
       opacity: 1;
       height: 141px;
-      transition-property: height opacity transform;
-      transition-duration: 0.4s;
+      transition: height 0.4s, opacity 0.4s, transform 0.4s;
     }
     .plusbutton {
       /* z-index: 3; */

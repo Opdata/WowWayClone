@@ -11,7 +11,6 @@ const Box = styled.div`
   width: ${(props) => props.width - 10}px;
   min-height: 1000px;
   margin-left: 10px;
-  background-color: grey;
   transform: ${(props) => props.state === true && "translateX(280px)"};
   transition-property: transform;
   transition-duration: 0.6s;
@@ -22,10 +21,10 @@ const ContentBox = styled.div`
   width: 100%;
   height: ${(props) =>
     props.row && props.cardheight && props.row * props.cardheight}px;
-  background-color: grey;
+  background-color: ${(props) => props.theme.ContentBoxBackground};
 `;
 
-const Content = ({ state }) => {
+const Content = ({ state, setState }) => {
   const [tag, setTag] = useState(4);
   const Width = ElementWidth();
   let CardCount; // 2115부터 6개  1695 부터 5개 1275 부터 4개 980부터 태블릿
@@ -69,9 +68,8 @@ const Content = ({ state }) => {
     } else {
       CopyArray = Data.concat();
       CopyArray.map((data, index) => {
-        if (data.tag === tag) {
-          emptyArray.push(CopyArray.splice(index, 1)[0]);
-        }
+        data.tag === tag && emptyArray.push(CopyArray.splice(index, 1)[0]);
+        return 0;
       });
       result = [];
       result = emptyArray.concat(CopyArray);
@@ -82,7 +80,13 @@ const Content = ({ state }) => {
   const SortResult = Sort();
 
   return (
-    <Box state={state} width={Width}>
+    <Box
+      state={state}
+      width={Width}
+      onMouseEnter={() => {
+        setState(false);
+      }}
+    >
       <Header tag={tag} setTag={setTag} sort={Sort} />
       <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
         {Width !== undefined &&

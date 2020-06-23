@@ -18,7 +18,7 @@ const Main = () => {
   return (
     <Wrapper>
       <Menu state={state} setState={setState} />
-      <Content state={state} />
+      <Content state={state} setState={setState} />
     </Wrapper>
   );
 };
