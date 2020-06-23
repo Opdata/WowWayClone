@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Data from "../Contents/data";
 
 const Box = styled.div`
   width: 100%;
@@ -10,7 +9,7 @@ const Box = styled.div`
 `;
 
 const Header = ({ tag, setTag }) => {
-  return <Box onClick={() => setTag(tag + 1)}>{/*  */}</Box>;
+  return <Box onClick={() => setTag(tag - 1)}>{/*  */}</Box>;
 };
 
 export default Header;
