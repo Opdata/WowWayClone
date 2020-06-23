@@ -106,38 +106,3 @@ const Content = ({ state }) => {
 };
 
 export default Content;
-
-// transition 작동 원리
-// 옮기는 작업 어떻게 해야할지
-
-/* {Data.map((data, index) => {
-  const ColNumber = index % CardCount; // 나머지
-  if (ColNumber === 0 && index >= CardCount) {
-    RowNumber++;
-  }
-
-  return (
-    <ContentDiv
-      key={index}
-      width={CardWidth}
-      height={CardHeight}
-      y={RowNumber}
-      x={String(ColNumber)}
-    >
-      <ImgBox className={"imgbox"} color={data.img} />
-      <TextBox className={"textbox"}>
-        <TextDiv
-          style={{ padding: 5 }}
-          fontsize={18}
-          color={"white"}
-          weight={700}
-        >
-          {data.Text}
-        </TextDiv>
-        <TextDiv fontsize={12} color={"#737373"} weight={400}>
-          {data.SubText}
-        </TextDiv>
-      </TextBox>
-    </ContentDiv>
-  );
-})} */
