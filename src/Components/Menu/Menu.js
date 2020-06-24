@@ -7,6 +7,8 @@ const Box = styled.div`
   height: 100%;
   display: flex;
   padding-right: 10px;
+  color: ${(props) => props.theme.HeaderBackground};
+  font-family: Arial, sans-serif;
   transform: translateX(${(props) => (props.state ? "0px" : "-280px")});
   transition: transform 0.6s;
   z-index: 3;
@@ -39,6 +41,17 @@ const SubTitleBox = styled.div`
   color: ${(props) => props.theme.HeaderBackground};
 `;
 
+const Footer = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  font-size: 12px;
+  top: 31%;
+  border-top: 1px solid ${(props) => props.theme.MenuLine};
+`;
+
 const Menu = ({ state, setState }) => {
   // console.log(state);
   return (
@@ -56,6 +69,7 @@ const Menu = ({ state, setState }) => {
         <MenuInfo text={"PORTPOLIO"}></MenuInfo>
         <MenuInfo text={"OUR BLOG"}></MenuInfo>
         <MenuInfo text={"CONTACT US"}></MenuInfo>
+        <Footer>WowWay © All rights reserved.</Footer>
       </MenuDiv>
     </Box>
   );

@@ -66,6 +66,8 @@ const PlusButton = styled.div`
 const TextBox = styled.div`
   /*  */
   position: absolute;
+  width: 100%;
+  height: 0px;
   display: flex;
   opacity: 0;
   align-items: center;
@@ -73,9 +75,7 @@ const TextBox = styled.div`
   flex-direction: column;
   left: 0px;
   bottom: 0px;
-  width: 100%;
-  height: 0px;
-  /* height: 141px; */
+  font-family: Arial, sans-serif;
   background-color: black;
 `;
 

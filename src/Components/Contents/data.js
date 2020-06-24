@@ -1,3 +1,9 @@
+// 0: Print
+// 1: Web Design
+// 2: Motion
+// 3: Logotype
+// 4: WordPress
+
 export default [
   {
     id: 0,
