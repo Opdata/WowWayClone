@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Data from "../Contents/data";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
-const MainMenu = styled.div`
+const MainMenu = styled(Link)`
   display: flex;
   width: 215px;
   height: 40px;
@@ -10,7 +11,6 @@ const MainMenu = styled.div`
   margin-left: -30px;
   font-family: Arial, sans-serif;
   cursor: pointer;
-  /* background-color: ${(props) => props.theme.MenuFocusBackground}; */
 `;
 
 const MenuBox = styled.div`
@@ -40,7 +40,7 @@ const LengthBox = styled.div`
   padding: 2px;
 `;
 
-const MenuInfo = ({ text, setFocus, setTag }) => {
+const MenuInfo = ({ text, setTag }) => {
   const Print = Data.filter((x) => x.tag === 0).length;
   const WebDesign = Data.filter((x) => x.tag === 1).length;
   const Motion = Data.filter((x) => x.tag === 2).length;
@@ -48,13 +48,22 @@ const MenuInfo = ({ text, setFocus, setTag }) => {
   const WordPress = Data.filter((x) => x.tag === 4).length;
 
   return (
-    <>
-      <MainMenu>
+    <Router>
+      <MainMenu
+        to={
+          text === "PORTPOLIO"
+            ? "/"
+            : text === "OUR BLOG"
+            ? "/blog"
+            : text === "CONTACT US" && "/contact-us"
+        }
+      >
         <MenuBox>{text}</MenuBox>
       </MainMenu>
       {text === "PORTPOLIO" && (
         <>
           <MainMenu
+            to={"#"} // 해쉬라우터 적용해야할부분
             onClick={() => {
               // setFocus(1);
               setTag(5);
@@ -123,7 +132,7 @@ const MenuInfo = ({ text, setFocus, setTag }) => {
           </MainMenu>
         </>
       )}
-    </>
+    </Router>
   );
 };
 

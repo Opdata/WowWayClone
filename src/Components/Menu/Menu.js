@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import MenuInfo from "./MenuInfo";
 const Box = styled.div`
   position: fixed;
@@ -53,8 +54,6 @@ const Footer = styled.div`
 `;
 
 const Menu = ({ state, setState, setTag }) => {
-  // console.log(state);
-  // const [focus, setFocus] = useState(1);
   return (
     <Box
       state={state}
@@ -67,11 +66,7 @@ const Menu = ({ state, setState, setTag }) => {
         <SubTitleBox>
           The great reboot of an unique and incredibly interactive theme
         </SubTitleBox>
-        <MenuInfo
-          text={"PORTPOLIO"}
-          // setFocus={setFocus}
-          setTag={setTag}
-        ></MenuInfo>
+        <MenuInfo text={"PORTPOLIO"} setTag={setTag}></MenuInfo>
         <MenuInfo text={"OUR BLOG"}></MenuInfo>
         <MenuInfo text={"CONTACT US"}></MenuInfo>
         <Footer>WowWay © All rights reserved.</Footer>
