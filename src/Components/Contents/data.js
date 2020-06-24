@@ -3,6 +3,7 @@
 // 2: Motion
 // 3: Logotype
 // 4: WordPress
+// 5: All
 
 export default [
   {

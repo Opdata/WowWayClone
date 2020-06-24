@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import { InnerWidth } from "../Hooks/SizeHooks";
 import Menu from "./Menu/Menu";
 import Content from "./Contents/Contents";
+import Data from "../Components/Contents/data";
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
@@ -12,13 +12,38 @@ const Wrapper = styled.div`
 `;
 
 const Main = () => {
+  const [tag, setTag] = useState(5);
   const [state, setState] = useState(false);
-  // const width = InnerWidth();
+  let result = []; // 다시로드됨
+  let CopyArray;
+
+  const Sort = () => {
+    const emptyArray = [];
+    if (tag === 5) {
+      result = result.concat(Data);
+    } else {
+      CopyArray = Data.concat();
+      CopyArray.map((data, index) => {
+        data.tag === tag && emptyArray.push(CopyArray.splice(index, 1)[0]);
+        return 0;
+      });
+      result = [];
+      result = emptyArray.concat(CopyArray);
+    }
+    return result;
+  };
+
+  const SortResult = Sort();
 
   return (
     <Wrapper>
-      <Menu state={state} setState={setState} />
-      <Content state={state} setState={setState} />
+      <Menu state={state} setState={setState} setTag={setTag} />
+      <Content
+        state={state}
+        setState={setState}
+        sortResult={SortResult}
+        data={Data}
+      />
     </Wrapper>
   );
 };

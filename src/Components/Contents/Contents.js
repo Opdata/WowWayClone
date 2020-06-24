@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import ElementWidth from "../../Hooks/ElementSizeHooks";
 import Header from "./Header";
 import Card from "./Card";
 import Footer from "./Footer";
-import Data from "./data";
 
 const Box = styled.div`
   /*  */
@@ -24,8 +23,7 @@ const ContentBox = styled.div`
   background-color: ${(props) => props.theme.ContentBoxBackground};
 `;
 
-const Content = ({ state, setState }) => {
-  const [tag, setTag] = useState(4);
+const Content = ({ state, setState, sortResult, data }) => {
   const Width = ElementWidth();
   let CardCount; // 2115부터 6개  1695 부터 5개 1275 부터 4개 980부터 태블릿
   //855 부터 3개 // 435부터 2개
@@ -33,8 +31,6 @@ const Content = ({ state, setState }) => {
   let ContentRow;
   let CardWidth;
   let CardHeight;
-  let result = []; // 다시로드됨
-  let CopyArray;
 
   if (Width !== undefined) {
     if (Width >= 2132) {
@@ -54,30 +50,12 @@ const Content = ({ state, setState }) => {
     CardWidth = (Width - 10) / CardCount;
     CardHeight = CardWidth * 0.75;
 
-    if (Data.length % CardCount === 0) {
-      ContentRow = Data.length / CardCount;
+    if (data.length % CardCount === 0) {
+      ContentRow = data.length / CardCount;
     } else {
-      ContentRow = Data.length / CardCount + 1;
+      ContentRow = data.length / CardCount + 1;
     }
   }
-
-  const Sort = () => {
-    const emptyArray = [];
-    if (tag === 4) {
-      result = result.concat(Data);
-    } else {
-      CopyArray = Data.concat();
-      CopyArray.map((data, index) => {
-        data.tag === tag && emptyArray.push(CopyArray.splice(index, 1)[0]);
-        return 0;
-      });
-      result = [];
-      result = emptyArray.concat(CopyArray);
-    }
-    return result;
-  };
-
-  const SortResult = Sort();
 
   return (
     <Box
@@ -87,11 +65,11 @@ const Content = ({ state, setState }) => {
         setState(false);
       }}
     >
-      <Header tag={tag} setTag={setTag} sort={Sort} />
+      <Header />
       <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
         {Width !== undefined &&
-          Data.map((data, index) => {
-            const sortIndex = SortResult.findIndex((x) => x.id === data.id);
+          data.map((data, index) => {
+            const sortIndex = sortResult.findIndex((x) => x.id === data.id);
             return (
               <Card
                 key={index}

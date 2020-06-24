@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import MenuInfo from "./MenuInfo";
 const Box = styled.div`
@@ -48,12 +48,13 @@ const Footer = styled.div`
   width: 100%;
   height: 70px;
   font-size: 12px;
-  top: 31%;
+  top: 26%;
   border-top: 1px solid ${(props) => props.theme.MenuLine};
 `;
 
-const Menu = ({ state, setState }) => {
+const Menu = ({ state, setState, setTag }) => {
   // console.log(state);
+  // const [focus, setFocus] = useState(1);
   return (
     <Box
       state={state}
@@ -66,7 +67,11 @@ const Menu = ({ state, setState }) => {
         <SubTitleBox>
           The great reboot of an unique and incredibly interactive theme
         </SubTitleBox>
-        <MenuInfo text={"PORTPOLIO"}></MenuInfo>
+        <MenuInfo
+          text={"PORTPOLIO"}
+          // setFocus={setFocus}
+          setTag={setTag}
+        ></MenuInfo>
         <MenuInfo text={"OUR BLOG"}></MenuInfo>
         <MenuInfo text={"CONTACT US"}></MenuInfo>
         <Footer>WowWay © All rights reserved.</Footer>
