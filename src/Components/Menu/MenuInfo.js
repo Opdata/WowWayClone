@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Data from "../Contents/data";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  HashRouter as Hash,
+  Link,
+} from "react-router-dom";
 
 const MainMenu = styled(Link)`
   display: flex;
@@ -48,91 +52,70 @@ const MenuInfo = ({ text, setTag }) => {
   const WordPress = Data.filter((x) => x.tag === 4).length;
 
   return (
-    <Router>
-      <MainMenu
-        to={
-          text === "PORTPOLIO"
-            ? "/"
-            : text === "OUR BLOG"
-            ? "/blog"
-            : text === "CONTACT US" && "/contact-us"
-        }
-      >
-        <MenuBox>{text}</MenuBox>
-      </MainMenu>
-      {text === "PORTPOLIO" && (
-        <>
-          <MainMenu
-            to={"#"} // 해쉬라우터 적용해야할부분
-            onClick={() => {
-              // setFocus(1);
-              setTag(5);
-            }}
-          >
-            <MenuBox Sub>
-              All<LengthBox>({Data.length})</LengthBox>
-              <ArrowBox />
-            </MenuBox>
-          </MainMenu>
+    <>
+      <Router>
+        <MainMenu
+          to={
+            text === "PORTPOLIO"
+              ? "/"
+              : text === "OUR BLOG"
+              ? "/blog"
+              : text === "CONTACT US" && "/contact-us"
+          }
+        >
+          <MenuBox>{text}</MenuBox>
+        </MainMenu>
+        {/* {text === "PORTPOLIO" && (
+          <>
+            <Hash>
+              <MainMenu
+                to={"/#"} // 해쉬라우터 적용해야할부분
+                onClick={() => {
+                  // setFocus(1);
+                  setTag(5);
+                }}
+              >
+                <MenuBox Sub>
+                  All<LengthBox>({Data.length})</LengthBox>
+                  <ArrowBox />
+                </MenuBox>
+              </MainMenu>
 
-          <MainMenu
-            onClick={() => {
-              // setFocus(1);
-              setTag(0);
-            }}
-          >
-            <MenuBox Sub>
-              Print<LengthBox>({Print})</LengthBox>
-              <ArrowBox />
-            </MenuBox>
-          </MainMenu>
-          <MainMenu
-            onClick={() => {
-              // setFocus(1);
-              setTag(1);
-            }}
-          >
-            <MenuBox Sub>
-              Web Design<LengthBox>({WebDesign})</LengthBox>
-              <ArrowBox />
-            </MenuBox>
-          </MainMenu>
-          <MainMenu
-            onClick={() => {
-              // setFocus(1);
-              setTag(2);
-            }}
-          >
-            <MenuBox Sub>
-              Motion<LengthBox>({Motion})</LengthBox>
-              <ArrowBox />
-            </MenuBox>
-          </MainMenu>
-          <MainMenu
-            onClick={() => {
-              // setFocus(1);
-              setTag(3);
-            }}
-          >
-            <MenuBox Sub>
-              Logotype<LengthBox>({Logotype})</LengthBox>
-              <ArrowBox />
-            </MenuBox>
-          </MainMenu>
-          <MainMenu
-            onClick={() => {
-              // setFocus(1);
-              setTag(4);
-            }}
-          >
-            <MenuBox Sub>
-              WordPress<LengthBox>({WordPress})</LengthBox>
-              <ArrowBox />
-            </MenuBox>
-          </MainMenu>
-        </>
-      )}
-    </Router>
+              <MainMenu to={"/#/print"} onClick={() => setTag(0)}>
+                <MenuBox Sub>
+                  Print<LengthBox>({Print})</LengthBox>
+                  <ArrowBox />
+                </MenuBox>
+              </MainMenu>
+              <MainMenu to={"/#/web-design"}>
+                <MenuBox Sub>
+                  Web Design<LengthBox>({WebDesign})</LengthBox>
+                  <ArrowBox />
+                </MenuBox>
+              </MainMenu>
+              <MainMenu to={"/#/motion"}>
+                <MenuBox Sub>
+                  Motion<LengthBox>({Motion})</LengthBox>
+                  <ArrowBox />
+                </MenuBox>
+              </MainMenu>
+              <MainMenu to={"/#/logotype"}>
+                <MenuBox Sub>
+                  Logotype<LengthBox>({Logotype})</LengthBox>
+                  <ArrowBox />
+                </MenuBox>
+              </MainMenu>
+              <MainMenu to={"/#/wordpress"}>
+                <MenuBox Sub>
+                  WordPress<LengthBox>({WordPress})</LengthBox>
+                  <ArrowBox />
+                </MenuBox>
+              </MainMenu>
+            </Hash>
+          </>
+        )} */}
+      </Router>
+    </>
   );
 };
 

@@ -2,7 +2,8 @@ import React from "react";
 import data from "./data";
 import Card from "./Card";
 
-const Content = ({ width, cardwidth, cardheight, cardcount, tag }) => {
+const Content = ({ width, cardWidth, cardHeight, cardCount, tag, setTag }) => {
+  console.log(width, cardWidth, cardHeight, cardCount, tag, setTag);
   let result = []; // 다시로드됨
   let CopyArray;
 
@@ -23,6 +24,7 @@ const Content = ({ width, cardwidth, cardheight, cardcount, tag }) => {
   };
 
   const sortResult = Sort();
+
   return (
     <>
       {width !== undefined &&
@@ -31,9 +33,9 @@ const Content = ({ width, cardwidth, cardheight, cardcount, tag }) => {
           return (
             <Card
               key={index}
-              width={cardwidth}
-              height={cardheight}
-              cardCount={cardcount}
+              width={cardWidth}
+              height={cardHeight}
+              cardCount={cardCount}
               sortIndex={sortIndex}
               data={data}
             />

@@ -87,13 +87,36 @@ const App = () => {
           <Header />
           <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
             {Width !== undefined && (
-              <BrowserRoute
-                width={Width}
-                cardWidth={CardWidth}
-                cardHeight={CardHeight}
-                cardCount={CardCount}
-                tag={tag}
-              />
+              <>
+                {/* {console.log(window.location)} */}
+                <BrowserRoute
+                  width={Width}
+                  cardWidth={CardWidth}
+                  cardHeight={CardHeight}
+                  cardCount={CardCount}
+                  tag={tag}
+                  setTag={setTag}
+                />
+                {/* {window.location.hash === "" ? (
+                  <BrowserRoute
+                    width={Width}
+                    cardWidth={CardWidth}
+                    cardHeight={CardHeight}
+                    cardCount={CardCount}
+                    tag={tag}
+                    setTag={setTag}
+                  />
+                ) : (
+                  <HashRoute
+                    width={Width}
+                    cardWidth={CardWidth}
+                    cardHeight={CardHeight}
+                    cardCount={CardCount}
+                    tag={tag}
+                    setTag={setTag}
+                  />
+                )} */}
+              </>
             )}
           </ContentBox>
           <Footer />
