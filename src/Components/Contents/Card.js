@@ -91,7 +91,6 @@ const TextDiv = styled.div`
 `;
 
 const Card = ({ width, height, cardCount, sortIndex, data }) => {
-  // console.log(width, height, cardCount, sortIndex, data);
   return (
     <ContentDiv
       width={width}

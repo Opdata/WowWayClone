@@ -3,7 +3,6 @@ import data from "./data";
 import Card from "./Card";
 
 const Content = ({ width, cardWidth, cardHeight, cardCount, tag, setTag }) => {
-  console.log(width, cardWidth, cardHeight, cardCount, tag, setTag);
   let result = []; // 다시로드됨
   let CopyArray;
 

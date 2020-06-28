@@ -12,13 +12,11 @@ import BrowserRoute from "./Route/BrowserRoute";
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
-  /* width: 100%; */
   height: fit-content;
   overflow: hidden;
 `;
 
 const Box = styled.div`
-  /*  */
   width: ${(props) => props.width - 10}px;
   min-height: 1000px;
   margin-left: 10px;
@@ -75,6 +73,7 @@ const App = () => {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyle />
+
       <Wrapper>
         <Menu state={state} setState={setState} setTag={setTag} />
         <Box
@@ -87,36 +86,14 @@ const App = () => {
           <Header />
           <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
             {Width !== undefined && (
-              <>
-                {/* {console.log(window.location)} */}
-                <BrowserRoute
-                  width={Width}
-                  cardWidth={CardWidth}
-                  cardHeight={CardHeight}
-                  cardCount={CardCount}
-                  tag={tag}
-                  setTag={setTag}
-                />
-                {/* {window.location.hash === "" ? (
-                  <BrowserRoute
-                    width={Width}
-                    cardWidth={CardWidth}
-                    cardHeight={CardHeight}
-                    cardCount={CardCount}
-                    tag={tag}
-                    setTag={setTag}
-                  />
-                ) : (
-                  <HashRoute
-                    width={Width}
-                    cardWidth={CardWidth}
-                    cardHeight={CardHeight}
-                    cardCount={CardCount}
-                    tag={tag}
-                    setTag={setTag}
-                  />
-                )} */}
-              </>
+              <BrowserRoute
+                width={Width}
+                cardWidth={CardWidth}
+                cardHeight={CardHeight}
+                cardCount={CardCount}
+                tag={tag}
+                setTag={setTag}
+              />
             )}
           </ContentBox>
           <Footer />
