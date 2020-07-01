@@ -8,6 +8,7 @@ import Header from "./Components/Contents/Header";
 import data from "./Components/Contents/data";
 import Footer from "./Components/Contents/Footer";
 import BrowserRoute from "./Route/BrowserRoute";
+import { BrowserRouter } from "react-router-dom";
 
 const Wrapper = styled.div`
   display: flex;
@@ -73,32 +74,33 @@ const App = () => {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyle />
-
-      <Wrapper>
-        <Menu state={state} setState={setState} setTag={setTag} />
-        <Box
-          state={state}
-          width={Width}
-          onMouseEnter={() => {
-            setState(false);
-          }}
-        >
-          <Header />
-          <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
-            {Width !== undefined && (
-              <BrowserRoute
-                width={Width}
-                cardWidth={CardWidth}
-                cardHeight={CardHeight}
-                cardCount={CardCount}
-                tag={tag}
-                setTag={setTag}
-              />
-            )}
-          </ContentBox>
-          <Footer />
-        </Box>
-      </Wrapper>
+      <BrowserRouter>
+        <Wrapper>
+          <Menu state={state} setState={setState} setTag={setTag} />
+          <Box
+            state={state}
+            width={Width}
+            onMouseEnter={() => {
+              setState(false);
+            }}
+          >
+            <Header />
+            <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
+              {Width !== undefined && (
+                <BrowserRoute
+                  width={Width}
+                  cardWidth={CardWidth}
+                  cardHeight={CardHeight}
+                  cardCount={CardCount}
+                  tag={tag}
+                  setTag={setTag}
+                />
+              )}
+            </ContentBox>
+            <Footer />
+          </Box>
+        </Wrapper>
+      </BrowserRouter>
     </ThemeProvider>
   );
 };

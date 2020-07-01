@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Data from "../Contents/data";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MainMenu = styled.div`
   display: flex;
@@ -53,70 +53,68 @@ const MenuInfo = ({ text, setTag, focus, setFocus }) => {
 
   return (
     <>
-      <Router>
-        <MainMenu focus={focus}>
-          <MenuBox>
-            <Link
-              to={
-                text === "PORTPOLIO"
-                  ? "/"
-                  : text === "OUR BLOG"
-                  ? "/blog"
-                  : text === "CONTACT US" && "/contact-us"
-              }
-            >
-              {text}
-            </Link>
-          </MenuBox>
-        </MainMenu>
-        {text === "PORTPOLIO" && (
-          <>
-            <MainMenu
-              to={"/#"} // 해쉬라우터 적용해야할부분
-              onClick={() => {
-                // setFocus(1);
-                setTag(5);
-              }}
-            >
-              <MenuBox Sub>
-                All<LengthBox>({Data.length})</LengthBox>
-                <ArrowBox />
-              </MenuBox>
-            </MainMenu>
+      <MainMenu focus={focus}>
+        <MenuBox>
+          <Link
+            to={
+              text === "PORTPOLIO"
+                ? "/"
+                : text === "OUR BLOG"
+                ? "/blog"
+                : text === "CONTACT US" && "/contact-us"
+            }
+          >
+            {text}
+          </Link>
+        </MenuBox>
+      </MainMenu>
+      {text === "PORTPOLIO" && (
+        <>
+          <MainMenu
+            to={"/#"} // 해쉬라우터 적용해야할부분
+            onClick={() => {
+              // setFocus(1);
+              setTag(5);
+            }}
+          >
+            <MenuBox Sub>
+              All<LengthBox>({Data.length})</LengthBox>
+              <ArrowBox />
+            </MenuBox>
+          </MainMenu>
 
-            <MainMenu to={"/#/print"} onClick={() => setTag(0)}>
-              <MenuBox Sub>
-                Print<LengthBox>({Print})</LengthBox>
-                <ArrowBox />
-              </MenuBox>
-            </MainMenu>
-            <MainMenu to={"/#/web-design"}>
-              <MenuBox Sub>
-                Web Design<LengthBox>({WebDesign})</LengthBox>
-                <ArrowBox />
-              </MenuBox>
-            </MainMenu>
-            <MainMenu to={"/#/motion"}>
-              <MenuBox Sub>
-                Motion<LengthBox>({Motion})</LengthBox>
-                <ArrowBox />
-              </MenuBox>
-            </MainMenu>
-            <MainMenu to={"/#/logotype"}>
-              <MenuBox Sub>
-                Logotype<LengthBox>({Logotype})</LengthBox>
-                <ArrowBox />
-              </MenuBox>
-            </MainMenu>
-            <MainMenu to={"/#/wordpress"}>
-              <MenuBox Sub>
-                WordPress<LengthBox>({WordPress})</LengthBox>
-                <ArrowBox />
-              </MenuBox>
-            </MainMenu>
-          </>
-        )}
-      </Router>
+          <MainMenu to={"/#/print"} onClick={() => setTag(0)}>
+            <MenuBox Sub>
+              Print<LengthBox>({Print})</LengthBox>
+              <ArrowBox />
+            </MenuBox>
+          </MainMenu>
+          <MainMenu to={"/#/web-design"}>
+            <MenuBox Sub>
+              Web Design<LengthBox>({WebDesign})</LengthBox>
+              <ArrowBox />
+            </MenuBox>
+          </MainMenu>
+          <MainMenu to={"/#/motion"}>
+            <MenuBox Sub>
+              Motion<LengthBox>({Motion})</LengthBox>
+              <ArrowBox />
+            </MenuBox>
+          </MainMenu>
+          <MainMenu to={"/#/logotype"}>
+            <MenuBox Sub>
+              Logotype<LengthBox>({Logotype})</LengthBox>
+              <ArrowBox />
+            </MenuBox>
+          </MainMenu>
+          <MainMenu to={"/#/wordpress"}>
+            <MenuBox Sub>
+              WordPress<LengthBox>({WordPress})</LengthBox>
+              <ArrowBox />
+            </MenuBox>
+          </MainMenu>
+        </>
+      )}
     </>
   );
 };
