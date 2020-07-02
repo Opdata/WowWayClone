@@ -102,7 +102,7 @@ export default [
   {
     id: 15,
     img: "lightgrey",
-    tag: 1,
+    tag: 4,
     Text: "Move",
     SubText: "Motion, Web Design",
   },
@@ -124,7 +124,7 @@ export default [
   {
     id: 19,
     img: "black",
-    tag: 2,
+    tag: 4,
     Text: "Self Hosted Video",
     SubText: "Motion",
   },

@@ -76,7 +76,7 @@ const App = () => {
       <GlobalStyle />
       <BrowserRouter>
         <Wrapper>
-          <Menu state={state} setState={setState} setTag={setTag} />
+          <Menu state={state} setState={setState} tag={tag} setTag={setTag} />
           <Box
             state={state}
             width={Width}

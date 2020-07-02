@@ -11,7 +11,8 @@ const ContentDiv = styled.div`
     ${(props) => (props.sortIndex % props.cardCount) * props.width}px,
     ${(props) => parseInt(props.sortIndex / props.cardCount) * props.height}px
   );
-  opacity: 0.75;
+  opacity: ${(props) =>
+    props.tag === 5 ? 1 : props.dataTag === props.tag ? 1 : 0.1};
   transition: opacity 0.4s, transform 0.6s;
 
   cursor: pointer;
@@ -90,13 +91,15 @@ const TextDiv = styled.div`
   color: ${(props) => props.color};
 `;
 
-const Card = ({ width, height, cardCount, sortIndex, data }) => {
+const Card = ({ width, height, cardCount, sortIndex, data, tag }) => {
   return (
     <ContentDiv
       width={width}
       height={height}
       sortIndex={sortIndex}
       cardCount={cardCount}
+      tag={tag}
+      dataTag={data.tag}
     >
       <ImgBox className={"imgbox"} color={data.img}></ImgBox>
       <TextBox className={"textbox"}>

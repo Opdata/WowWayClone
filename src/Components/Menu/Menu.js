@@ -6,6 +6,7 @@ const Box = styled.div`
   width: 290px;
   height: 100%;
   display: flex;
+
   padding-right: 10px;
   color: ${(props) => props.theme.HeaderBackground};
   font-family: Arial, sans-serif;
@@ -14,7 +15,11 @@ const Box = styled.div`
   z-index: 3;
 `;
 
+const TitleMenuDiv = styled.div``;
 const MenuDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   background-color: ${(props) => props.theme.MenuBackground};
@@ -42,17 +47,17 @@ const SubTitleBox = styled.div`
 `;
 
 const Footer = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
   width: 100%;
-  height: 70px;
+  height: 69px;
   font-size: 12px;
-  top: 26%;
   border-top: 1px solid ${(props) => props.theme.MenuLine};
 `;
 
-const Menu = ({ state, setState, setTag }) => {
+const FooterTextBox = styled.div`
+  padding-top: 20px;
+`;
+
+const Menu = ({ state, setState, tag, setTag }) => {
   const [focus, setFocus] = useState(1);
 
   return (
@@ -63,19 +68,32 @@ const Menu = ({ state, setState, setTag }) => {
       }}
     >
       <MenuDiv>
-        <TitleBox>WowWay</TitleBox>
-        <SubTitleBox>
-          The great reboot of an unique and incredibly interactive theme
-        </SubTitleBox>
-        <MenuInfo
-          text={"PORTPOLIO"}
-          setTag={setTag}
-          focus={focus}
-          setFocus={setFocus}
-        ></MenuInfo>
-        <MenuInfo text={"OUR BLOG"}></MenuInfo>
-        <MenuInfo text={"CONTACT US"}></MenuInfo>
-        <Footer>WowWay © All rights reserved.</Footer>
+        <TitleMenuDiv>
+          <TitleBox>WowWay</TitleBox>
+          <SubTitleBox>
+            The great reboot of an unique and incredibly interactive theme
+          </SubTitleBox>
+          <MenuInfo
+            text={"PORTPOLIO"}
+            setFocus={setFocus}
+            focus={focus === 1 ? true : false}
+            tag={focus === 1 ? tag : false}
+            setTag={focus === 1 && setTag}
+          ></MenuInfo>
+          <MenuInfo
+            text={"OUR BLOG"}
+            setFocus={setFocus}
+            focus={focus === 8 ? true : false}
+          ></MenuInfo>
+          <MenuInfo
+            text={"CONTACT US"}
+            setFocus={setFocus}
+            focus={focus === 9 ? true : false}
+          ></MenuInfo>
+        </TitleMenuDiv>
+        <Footer>
+          <FooterTextBox>WowWay © All rights reserved.</FooterTextBox>
+        </Footer>
       </MenuDiv>
     </Box>
   );

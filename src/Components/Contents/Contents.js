@@ -12,10 +12,10 @@ const Content = ({ width, cardWidth, cardHeight, cardCount, tag, setTag }) => {
       result = result.concat(data);
     } else {
       CopyArray = data.concat();
-      CopyArray.map((data, index) => {
-        data.tag === tag && emptyArray.push(CopyArray.splice(index, 1)[0]);
-        return 0;
-      });
+      CopyArray.map(
+        (data, index) =>
+          data.tag === tag && emptyArray.push(CopyArray.splice(index, 1)[0])
+      );
       result = [];
       result = emptyArray.concat(CopyArray);
     }
@@ -37,6 +37,7 @@ const Content = ({ width, cardWidth, cardHeight, cardCount, tag, setTag }) => {
               cardCount={cardCount}
               sortIndex={sortIndex}
               data={data}
+              tag={tag}
             />
           );
         })}
