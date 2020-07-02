@@ -15,9 +15,34 @@ const ContentDiv = styled.div`
     props.tag === 5 ? 1 : props.dataTag === props.tag ? 1 : 0.1};
   transition: opacity 0.4s, transform 0.6s;
 
+  ${(props) =>
+    props.tag === 5
+      ? `
+    cursor: pointer;
+    :hover {
+    z-index: 1;
+    opacity: 1;
+    .imgbox {
+      /* z-index: 1; */
+      transform: translateY(-70px);
+      transition: transform 0.6s;
+    }
+    .textbox {
+      /* z-index: 2; */
+      transform: translateY(70px);
+      opacity: 1;
+      height: 141px;
+      transition: height 0.4s, opacity 0.4s, transform 0.4s;
+    }
+    .plusbutton {
+      /* z-index: 3; */
+      opacity: 1;
+    }
+  }`
+      : props.dataTag === props.tag
+      ? `
   cursor: pointer;
-
-  :hover {
+      :hover {
     z-index: 1;
     opacity: 1;
     .imgbox {
@@ -37,6 +62,8 @@ const ContentDiv = styled.div`
       opacity: 1;
     }
   }
+  `
+      : null}
 `;
 
 const ImgBox = styled.div`
