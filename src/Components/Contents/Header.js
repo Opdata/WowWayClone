@@ -8,7 +8,6 @@ import {
   FaLinkedinIn,
   FaBehance,
   FaRss,
-  FaSearch,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -48,7 +47,7 @@ const Icon = styled(Link)`
     opacity: 1;
   }
 `;
-
+/*
 const SearchBox = styled.div`
   display: flex;
   align-items: center;
@@ -67,8 +66,17 @@ const Input = styled.input`
   font-size: 11px;
   outline: none;
 `;
-
+*/
 const Header = () => {
+  /*
+Search Enter Key Evnet Function
+  const handleKeyDown = (e) => {
+    if (e === "Enter") {
+      window.href;
+    }
+  };
+  */
+
   return (
     <Box>
       <IconSearchBox>
@@ -95,10 +103,12 @@ const Header = () => {
             <FaRss />
           </Icon>
         </IconBox>
+        {/*
         <SearchBox>
           <FaSearch style={({ width: 15 }, { height: 15 })} />
-          <Input placeholder={"Type and hit Enter"} />
+          <Input placeholder={"Type and hit Enter"} onKeyDown={}/>
         </SearchBox>
+        */}
       </IconSearchBox>
     </Box>
   );
