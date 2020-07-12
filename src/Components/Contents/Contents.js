@@ -2,7 +2,7 @@ import React from "react";
 import data from "./data";
 import Card from "./Card";
 
-const Content = ({ width, cardWidth, cardHeight, cardCount, tag, setTag }) => {
+const Content = ({ width, cardWidth, cardHeight, cardCount, tag }) => {
   let result = []; // 다시로드됨
   let CopyArray;
 

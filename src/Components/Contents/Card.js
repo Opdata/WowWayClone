@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Plus from "../../Assets/plus.png";
 
 const ContentDiv = styled.div`
-  /* row col */
   position: absolute;
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
