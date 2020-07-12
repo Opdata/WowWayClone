@@ -4,6 +4,7 @@ import { FaGithub, FaRegStickyNote } from "react-icons/fa";
 const Box = styled.div`
   display: flex;
   align-items: center;
+  /* justify-content: center; */
   height: 70px;
   padding-left: 30px;
   background-color: ${(props) => props.theme.HeaderBackground};
@@ -33,6 +34,7 @@ const ContactBox = styled.p`
   display: flex;
   padding-top: 4px;
   font-size: 13px;
+
   color: ${(props) => props.theme.IconColor};
   font-family: Arial, sans-serif;
 `;
@@ -55,7 +57,14 @@ const Footer = () => {
             style={{ width: "18px", height: "18px", paddingRight: "10px" }}
           />
         </Icon>
-        <ContactBox>Contact : pb03641@gmail.com</ContactBox>
+        <ContactBox style={{ paddingRight: "10px", fontWeight: 800 }}>
+          Contact
+        </ContactBox>
+        <ContactBox
+          style={{ fontSize: "11px", fontWeight: 0, paddingTop: "5px" }}
+        >
+          pb03641@gmail.com
+        </ContactBox>
       </IconSearchBox>
     </Box>
   );
