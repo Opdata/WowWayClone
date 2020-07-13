@@ -2,7 +2,14 @@ import React from "react";
 import data from "./data";
 import Card from "./Card";
 
-const Content = ({ width, cardWidth, cardHeight, cardCount, tag }) => {
+const Content = ({
+  width,
+  cardWidth,
+  cardHeight,
+  cardCount,
+  tag,
+  setClick,
+}) => {
   let result = []; // 다시로드됨
   let CopyArray;
 
@@ -38,6 +45,7 @@ const Content = ({ width, cardWidth, cardHeight, cardCount, tag }) => {
               sortIndex={sortIndex}
               data={data}
               tag={tag}
+              setClick={setClick}
             />
           );
         })}

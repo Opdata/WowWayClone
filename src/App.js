@@ -29,14 +29,30 @@ const Box = styled.div`
 const ContentBox = styled.div`
   display: flex;
   width: 100%;
+  min-height: 860px;
   height: ${(props) =>
     props.row && props.cardheight && props.row * props.cardheight}px;
   background-color: ${(props) => props.theme.ContentBoxBackground};
 `;
 
+const OpacityBackground = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  );
+  transform: translateY(100%);
+  transition: all 3s;
+  z-index: 200;
+`;
+
 const App = () => {
   const [tag, setTag] = useState(5);
   const [state, setState] = useState(false);
+  const [click, setClick] = useState(false);
   const Width = ElementWidth();
 
   let CardCount; // 2115부터 6개  1695 부터 5개 1275 부터 4개 980부터 태블릿
@@ -86,7 +102,7 @@ const App = () => {
           >
             <Header />
             <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
-              {Width !== undefined && (
+              {/* {Width !== undefined && (
                 <BrowserRoute
                   width={Width}
                   cardWidth={CardWidth}
@@ -94,8 +110,10 @@ const App = () => {
                   cardCount={CardCount}
                   tag={tag}
                   setTag={setTag}
+                  setClick={setClick}
                 />
-              )}
+              )} */}
+              {click === false && <OpacityBackground />}
             </ContentBox>
             <Footer />
           </Box>

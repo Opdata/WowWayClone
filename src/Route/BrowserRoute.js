@@ -10,6 +10,7 @@ const BrowserRoute = ({
   cardCount,
   tag,
   setTag,
+  setClick,
 }) => {
   return (
     <Switch>
@@ -21,6 +22,7 @@ const BrowserRoute = ({
           cardCount={cardCount}
           tag={tag}
           setTag={setTag}
+          setClick={setClick}
         />
       </Route>
       <Route exact path="/blog" component={Empty} />

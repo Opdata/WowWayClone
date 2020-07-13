@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Plus from "../../Assets/plus.png";
 
@@ -13,7 +13,6 @@ const ContentDiv = styled.div`
   opacity: ${(props) =>
     props.tag === 5 ? 1 : props.dataTag === props.tag ? 1 : 0.1};
   transition: opacity 0.4s, transform 0.6s;
-
   ${(props) =>
     props.tag === 5
       ? `
@@ -117,7 +116,12 @@ const TextDiv = styled.div`
   color: ${(props) => props.color};
 `;
 
-const Card = ({ width, height, cardCount, sortIndex, data, tag }) => {
+const Card = ({ width, height, cardCount, sortIndex, data, tag, setClick }) => {
+  const ClickEvent = ({ Title, SubTitle, Info }) => {
+    setClick(true);
+    console.log(Title, SubTitle, Info);
+  };
+
   return (
     <ContentDiv
       width={width}
@@ -126,6 +130,7 @@ const Card = ({ width, height, cardCount, sortIndex, data, tag }) => {
       cardCount={cardCount}
       tag={tag}
       dataTag={data.tag}
+      onClick={() => ClickEvent(data.Modal)}
     >
       <ImgBox className={"imgbox"} color={data.img}></ImgBox>
       <TextBox className={"textbox"}>
