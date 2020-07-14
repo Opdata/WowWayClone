@@ -12,7 +12,6 @@ import {
 import { Link } from "react-router-dom";
 
 const Box = styled.div`
-  /* width: 100%; */
   display: flex;
   align-items: center;
   height: 70px;
@@ -67,7 +66,7 @@ const Input = styled.input`
   outline: none;
 `;
 */
-const Header = () => {
+const Header = ({ setClick }) => {
   /*
 Search Enter Key Evnet Function
   const handleKeyDown = (e) => {
@@ -77,8 +76,13 @@ Search Enter Key Evnet Function
   };
   */
 
+  const ClickHandle = () => {
+    console.log("확인");
+    setClick(true);
+  };
+
   return (
-    <Box>
+    <Box onClick={ClickHandle}>
       <IconSearchBox>
         <IconBox>
           <Icon to={"#"}>

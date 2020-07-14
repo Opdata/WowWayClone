@@ -36,17 +36,35 @@ const ContentBox = styled.div`
 `;
 
 const OpacityBackground = styled.div`
+  z-index: 2;
   display: flex;
-  width: 100%;
-  height: 100%;
+  width: ${(props) => props.width - 10}px;
+  height: 0%;
   background: linear-gradient(
     to bottom,
     rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 0.5)
-  );
-  transform: translateY(100%);
-  transition: all 3s;
-  z-index: 200;
+  ); 
+  ${(props) =>
+    props.click &&
+    `
+  height: 100%;
+  transition: linear height 0.4s`}
+
+  /*
+  성능 고려한 다른 방법(전체 화면에서 translate)
+  transform: translateY(-120%);
+   background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  ); 
+
+  ${(props) =>
+    props.click &&
+    `  transform: translateY(0%);
+  transition: linear transform 0.1s;`}
+  */
 `;
 
 const App = () => {
@@ -102,7 +120,8 @@ const App = () => {
           >
             <Header />
             <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
-              {/* {Width !== undefined && (
+              <OpacityBackground width={Width} click={click} />
+              {Width !== undefined && (
                 <BrowserRoute
                   width={Width}
                   cardWidth={CardWidth}
@@ -112,8 +131,7 @@ const App = () => {
                   setTag={setTag}
                   setClick={setClick}
                 />
-              )} */}
-              {click === false && <OpacityBackground />}
+              )}
             </ContentBox>
             <Footer />
           </Box>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Plus from "../../Assets/plus.png";
 
@@ -21,19 +21,16 @@ const ContentDiv = styled.div`
     z-index: 1;
     opacity: 1;
     .imgbox {
-      /* z-index: 1; */
       transform: translateY(-70px);
       transition: transform 0.6s;
     }
     .textbox {
-      /* z-index: 2; */
       transform: translateY(70px);
       opacity: 1;
       height: 141px;
       transition: height 0.4s, opacity 0.4s, transform 0.4s;
     }
     .plusbutton {
-      /* z-index: 3; */
       opacity: 1;
     }
   }`
@@ -44,19 +41,16 @@ const ContentDiv = styled.div`
     z-index: 1;
     opacity: 1;
     .imgbox {
-      /* z-index: 1; */
       transform: translateY(-70px);
       transition: transform 0.6s;
     }
     .textbox {
-      /* z-index: 2; */
       transform: translateY(70px);
       opacity: 1;
       height: 141px;
       transition: height 0.4s, opacity 0.4s, transform 0.4s;
     }
     .plusbutton {
-      /* z-index: 3; */
       opacity: 1;
     }
   }
@@ -65,7 +59,6 @@ const ContentDiv = styled.div`
 `;
 
 const ImgBox = styled.div`
-  /*  */
   width: 100%;
   height: 100%;
   background-color: ${(props) => props.color};
@@ -90,7 +83,6 @@ const PlusButton = styled.div`
 `;
 
 const TextBox = styled.div`
-  /*  */
   position: absolute;
   width: 100%;
   height: 0px;
@@ -106,8 +98,6 @@ const TextBox = styled.div`
 `;
 
 const TextDiv = styled.div`
-  /*  */
-  /* opacity: 0; */
   display: flex;
   align-items: center;
   justify-content: center;

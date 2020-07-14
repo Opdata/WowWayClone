@@ -10,7 +10,7 @@ const Content = ({
   tag,
   setClick,
 }) => {
-  let result = []; // 다시로드됨
+  let result = [];
   let CopyArray;
 
   const Sort = () => {
