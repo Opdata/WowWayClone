@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import Theme from "./Styles/Theme";
 import GlobalStyle from "./Styles/GlobalStyles";
-import ElementWidth from "./Hooks/ElementSizeHooks";
+import ElementSize from "./Hooks/ElementSizeHooks";
 import Menu from "./Components/Menu/Menu";
 import Header from "./Components/Contents/Header";
 import data from "./Components/Contents/data";
+import Modal from "./Components/Contents/Modal";
 import Footer from "./Components/Contents/Footer";
 import BrowserRoute from "./Route/BrowserRoute";
 import { BrowserRouter } from "react-router-dom";
@@ -19,7 +20,6 @@ const Wrapper = styled.div`
 
 const Box = styled.div`
   width: ${(props) => props.width - 10}px;
-  min-height: 1000px;
   margin-left: 10px;
   transform: ${(props) => props.state === true && "translateX(280px)"};
   transition-property: transform;
@@ -35,43 +35,11 @@ const ContentBox = styled.div`
   background-color: ${(props) => props.theme.ContentBoxBackground};
 `;
 
-const OpacityBackground = styled.div`
-  z-index: 2;
-  display: flex;
-  width: ${(props) => props.width - 10}px;
-  height: 0%;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 0.5)
-  ); 
-  ${(props) =>
-    props.click &&
-    `
-  height: 100%;
-  transition: linear height 0.4s`}
-
-  /*
-  성능 고려한 다른 방법(전체 화면에서 translate)
-  transform: translateY(-120%);
-   background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 0.5)
-  ); 
-
-  ${(props) =>
-    props.click &&
-    `  transform: translateY(0%);
-  transition: linear transform 0.1s;`}
-  */
-`;
-
 const App = () => {
   const [tag, setTag] = useState(5);
   const [state, setState] = useState(false);
   const [click, setClick] = useState(false);
-  const Width = ElementWidth();
+  const { width: Width, height } = ElementSize();
 
   let CardCount; // 2115부터 6개  1695 부터 5개 1275 부터 4개 980부터 태블릿
   //855 부터 3개 // 435부터 2개
@@ -119,8 +87,8 @@ const App = () => {
             }}
           >
             <Header />
+            {click && <Modal width={Width} height={height} click={click} />}
             <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
-              <OpacityBackground width={Width} click={click} />
               {Width !== undefined && (
                 <BrowserRoute
                   width={Width}

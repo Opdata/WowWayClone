@@ -66,7 +66,7 @@ const Input = styled.input`
   outline: none;
 `;
 */
-const Header = ({ setClick }) => {
+const Header = () => {
   /*
 Search Enter Key Evnet Function
   const handleKeyDown = (e) => {
@@ -75,14 +75,8 @@ Search Enter Key Evnet Function
     }
   };
   */
-
-  const ClickHandle = () => {
-    console.log("확인");
-    setClick(true);
-  };
-
   return (
-    <Box onClick={ClickHandle}>
+    <Box>
       <IconSearchBox>
         <IconBox>
           <Icon to={"#"}>

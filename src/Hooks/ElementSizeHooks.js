@@ -2,22 +2,25 @@ import { useState, useEffect } from "react";
 
 export default () => {
   const [width, setWidth] = useState();
+  const [height, setHeight] = useState();
 
   useEffect(() => {
-    const WidthState = () => {
+    const clientSize = () => {
       setWidth(document.body.clientWidth);
+      setHeight(window.innerHeight);
     };
 
     if (document.body.clientHeight > window.innerHeight) {
+      setHeight(window.innerHeight);
       setWidth(document.body.clientWidth);
     }
 
-    window.addEventListener("resize", WidthState);
+    window.addEventListener("resize", clientSize);
 
     return () => {
-      window.removeEventListener("resize", WidthState);
+      window.removeEventListener("resize", clientSize);
     };
   }, []);
 
-  return width;
+  return { width, height };
 };

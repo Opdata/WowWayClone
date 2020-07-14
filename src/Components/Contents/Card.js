@@ -110,6 +110,7 @@ const Card = ({ width, height, cardCount, sortIndex, data, tag, setClick }) => {
   const ClickEvent = ({ Title, SubTitle, Info }) => {
     setClick(true);
     console.log(Title, SubTitle, Info);
+    document.body.style.overflowY = "auto";
   };
 
   return (
