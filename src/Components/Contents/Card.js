@@ -110,7 +110,14 @@ const Card = ({ width, height, cardCount, sortIndex, data, tag, setClick }) => {
   const ClickEvent = ({ Title, SubTitle, Info }) => {
     setClick(true);
     console.log(Title, SubTitle, Info);
-    document.body.style.overflowY = "auto";
+    // document.body.style.overflowY = "auto";
+
+    // window.onscroll = function () {
+    //   window.scrollTo(0, 0);
+    // };
+
+    const root = document.querySelector("#root");
+    root.classList.add("noScroll");
   };
 
   return (
