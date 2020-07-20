@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Content from "../Components/Contents/Contents";
-import Empty from "../Components/Contents/empty";
+import Empty from "../Components/Contents/Empty";
 
 const BrowserRoute = ({
   width,
