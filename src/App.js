@@ -34,6 +34,29 @@ const ContentBox = styled.div`
   background-color: ${(props) => props.theme.ContentBoxBackground};
 `;
 
+const OpacityBackground = styled.div`
+  position: absolute;
+  z-index: 2;
+  width: ${(props) => props.width - 10}px;
+  height: ${(props) => (props.click ? props.height - 70 : 0)}px;
+  background-color:rgba(255, 255, 255, 0.5);
+  transition: height 0.4s;
+  overflow: hidden;
+  /*
+  성능 고려한 다른 방법(전체 화면에서 translate)
+  transform: translateY(-120%);
+   background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5)
+  ); 
+  ${(props) =>
+    props.click &&
+    `  transform: translateY(0%);
+  transition: linear transform 0.1s;`}
+  */
+`;
+
 const App = () => {
   const [tag, setTag] = useState(5);
   const [state, setState] = useState(false);
@@ -86,8 +109,15 @@ const App = () => {
             }}
           >
             <Header />
-            {click && <Modal width={Width} height={height} click={click} />}
             <ContentBox row={parseInt(ContentRow)} cardheight={CardHeight}>
+              <OpacityBackground width={Width} height={height} click={click}>
+                <Modal
+                  width={Width}
+                  height={height}
+                  click={click}
+                  setClick={setClick}
+                />
+              </OpacityBackground>
               {Width !== undefined && (
                 <BrowserRoute
                   width={Width}

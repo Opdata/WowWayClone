@@ -4,7 +4,6 @@ import { FaGithub, FaRegStickyNote } from "react-icons/fa";
 const Box = styled.div`
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   height: 70px;
   padding-left: 30px;
   background-color: ${(props) => props.theme.HeaderBackground};

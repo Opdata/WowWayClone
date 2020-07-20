@@ -134,7 +134,6 @@ const Card = ({ width, height, cardCount, sortIndex, data, tag, setClick }) => {
       <TextBox className={"textbox"}>
         <PlusButton className={"plusbutton"} url={Plus}></PlusButton>
         <TextDiv
-          className={"test"}
           style={{ padding: 5 }}
           fontsize={18}
           color={"white"}
@@ -142,12 +141,7 @@ const Card = ({ width, height, cardCount, sortIndex, data, tag, setClick }) => {
         >
           {data.Text}
         </TextDiv>
-        <TextDiv
-          className={"test"}
-          fontsize={12}
-          color={"#737373"}
-          weight={400}
-        >
+        <TextDiv fontsize={12} color={"#737373"} weight={400}>
           {data.SubText}
         </TextDiv>
       </TextBox>
