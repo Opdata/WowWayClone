@@ -116,11 +116,11 @@ const Card = ({
   setClick,
   setModalData,
 }) => {
-  const ClickEvent = (Text, SubText, { Explain, Link }) => {
+  const ClickEvent = (img, Text, SubText, { Explain, Link }) => {
     const root = document.querySelector("#root");
     root.classList.add("noScroll");
     setClick(true);
-    setModalData({ Text, SubText, Explain, Link });
+    setModalData({ img, Text, SubText, Explain, Link });
   };
 
   return (
@@ -131,7 +131,7 @@ const Card = ({
       cardCount={cardCount}
       tag={tag}
       dataTag={data.tag}
-      onClick={() => ClickEvent(data.Text, data.SubText, data.Modal)}
+      onClick={() => ClickEvent(data.img, data.Text, data.SubText, data.Modal)}
     >
       <ImgBox className={"imgbox"} color={data.img}></ImgBox>
       <TextBox className={"textbox"}>

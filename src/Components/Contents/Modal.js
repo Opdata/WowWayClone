@@ -22,8 +22,8 @@ const ModalBox = styled.div`
 
 const ImgBox = styled.div`
   width: 750px;
-  height: 100%;
-  background-color: green;
+  height: 500px;
+  background-image: url(${(props) => props.url});
 `;
 
 const TextBox = styled.div`
@@ -106,6 +106,7 @@ const SocialButton = styled.div`
 `;
 
 const Modal = ({ width, height, click, setClick, modaldata }) => {
+  console.log(modaldata.img);
   const ClickEvent = () => {
     const root = document.querySelector("#root");
     root.classList.remove("noScroll");
@@ -115,7 +116,7 @@ const Modal = ({ width, height, click, setClick, modaldata }) => {
     <>
       <Wrapper width={width} height={height} click={click}>
         <ModalBox>
-          <ImgBox />
+          <ImgBox url={modaldata.img} />
           <TextBox>
             <CloseBox>
               <Button onClick={() => ClickEvent()}>
