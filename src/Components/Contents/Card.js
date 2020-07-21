@@ -113,13 +113,14 @@ const Card = ({
   sortIndex,
   data,
   tag,
-  click,
   setClick,
+  setModalData,
 }) => {
-  const ClickEvent = ({ Title, SubTitle, Info }) => {
+  const ClickEvent = (Text, SubText, { Explain, Link }) => {
     const root = document.querySelector("#root");
     root.classList.add("noScroll");
     setClick(true);
+    setModalData({ Text, SubText, Explain, Link });
   };
 
   return (
@@ -130,7 +131,7 @@ const Card = ({
       cardCount={cardCount}
       tag={tag}
       dataTag={data.tag}
-      onClick={() => ClickEvent(data.Modal)}
+      onClick={() => ClickEvent(data.Text, data.SubText, data.Modal)}
     >
       <ImgBox className={"imgbox"} color={data.img}></ImgBox>
       <TextBox className={"textbox"}>

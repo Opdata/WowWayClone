@@ -8,8 +8,8 @@ const Content = ({
   cardHeight,
   cardCount,
   tag,
-  click,
   setClick,
+  setModalData,
 }) => {
   let result = [];
   let CopyArray;
@@ -46,8 +46,8 @@ const Content = ({
               sortIndex={sortIndex}
               data={data}
               tag={tag}
-              click={click}
               setClick={setClick}
+              setModalData={setModalData}
             />
           );
         })}

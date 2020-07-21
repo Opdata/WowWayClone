@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: fit-content;
+  overflow-x: hidden;
 `;
 
 const Box = styled.div`
@@ -58,9 +59,10 @@ const OpacityBackground = styled.div`
 `;
 
 const App = () => {
-  const [tag, setTag] = useState(5);
   const [state, setState] = useState(false);
   const [click, setClick] = useState(false);
+  const [modaldata, setModalData] = useState();
+  const [tag, setTag] = useState(5);
   const { width: Width, height } = ElementSize();
 
   let CardCount; // 2115부터 6개  1695 부터 5개 1275 부터 4개 980부터 태블릿
@@ -116,6 +118,7 @@ const App = () => {
                   height={height}
                   click={click}
                   setClick={setClick}
+                  modaldata={modaldata !== undefined && modaldata}
                 />
               </OpacityBackground>
               {Width !== undefined && (
@@ -126,8 +129,8 @@ const App = () => {
                   cardCount={CardCount}
                   tag={tag}
                   setTag={setTag}
-                  click={click}
                   setClick={setClick}
+                  setModalData={setModalData}
                 />
               )}
             </ContentBox>

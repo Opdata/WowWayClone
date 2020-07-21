@@ -13,9 +13,8 @@ export default [
     Text: "Stationary Branding #1",
     SubText: "Featured. Logotype. Print",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -25,9 +24,8 @@ export default [
     Text: "Shadow – WP Theme",
     SubText: "Web Design, Wordpress",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -37,9 +35,8 @@ export default [
     Text: "Huge – WP Theme",
     SubText: "Logotype, Wordpress",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -49,9 +46,8 @@ export default [
     Text: "Wowway – WP Theme",
     SubText: "Web Design, Wordpress",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -61,9 +57,8 @@ export default [
     Text: "Password Protected",
     SubText: "Print",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -73,9 +68,8 @@ export default [
     Text: "Soundcloud",
     SubText: "Web Design",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -85,9 +79,8 @@ export default [
     Text: "Custom Link",
     SubText: "Motion",
     Modal: {
-      Title: "제목",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -97,9 +90,8 @@ export default [
     Text: "Lovely Charts",
     SubText: "Motion, Web Design",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -109,9 +101,8 @@ export default [
     Text: "Better Packaging",
     SubText: "Print",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -121,9 +112,8 @@ export default [
     Text: "Just Packaging",
     SubText: "Web Design",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -133,9 +123,8 @@ export default [
     Text: "Flat Icons #1",
     SubText: "Logotype",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -145,9 +134,8 @@ export default [
     Text: "Stationary Branding #2",
     SubText: "Print",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -157,9 +145,8 @@ export default [
     Text: "Improbable Identity",
     SubText: "Logotype",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -169,9 +156,8 @@ export default [
     Text: "In My New World",
     SubText: "Motion",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -181,9 +167,8 @@ export default [
     Text: "Flat Icons #2",
     SubText: "Print",
     Modal: {
-      Title: "제목",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -193,9 +178,8 @@ export default [
     Text: "Move",
     SubText: "Motion, Web Design",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -205,9 +189,8 @@ export default [
     Text: "Perfect Packaging",
     SubText: "Logotype, Print",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -217,9 +200,8 @@ export default [
     Text: "Business Cards",
     SubText: "Logotype, Print",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -229,9 +211,8 @@ export default [
     Text: "More Videos",
     SubText: "Motion",
     Modal: {
-      Title: "제목",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
   {
@@ -241,9 +222,8 @@ export default [
     Text: "Self Hosted Video",
     SubText: "Motion",
     Modal: {
-      Title: "Staionary Branding #",
-      SubTitle: "부제목",
-      Info: "본문 테스트",
+      Explain: "본문 테스트",
+      Link: "test",
     },
   },
 ];
