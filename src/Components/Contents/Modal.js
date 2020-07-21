@@ -106,6 +106,11 @@ const SocialButton = styled.div`
 `;
 
 const Modal = ({ width, height, click, setClick }) => {
+  const ClickEvent = () => {
+    const root = document.querySelector("#root");
+    root.classList.remove("noScroll");
+    setClick(false);
+  };
   return (
     <>
       <Wrapper width={width} height={height} click={click}>
@@ -113,7 +118,7 @@ const Modal = ({ width, height, click, setClick }) => {
           <ImgBox />
           <TextBox>
             <CloseBox>
-              <Button onClick={() => setClick(false)}>
+              <Button onClick={() => ClickEvent()}>
                 <ButtonImage url={button} />
               </Button>
             </CloseBox>

@@ -126,6 +126,7 @@ const App = () => {
                   cardCount={CardCount}
                   tag={tag}
                   setTag={setTag}
+                  click={click}
                   setClick={setClick}
                 />
               )}

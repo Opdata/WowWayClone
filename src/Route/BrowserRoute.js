@@ -10,6 +10,7 @@ const BrowserRoute = ({
   cardCount,
   tag,
   setTag,
+  click,
   setClick,
 }) => {
   return (
@@ -22,6 +23,7 @@ const BrowserRoute = ({
           cardCount={cardCount}
           tag={tag}
           setTag={setTag}
+          click={click}
           setClick={setClick}
         />
       </Route>

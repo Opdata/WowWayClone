@@ -8,6 +8,7 @@ const Content = ({
   cardHeight,
   cardCount,
   tag,
+  click,
   setClick,
 }) => {
   let result = [];
@@ -45,6 +46,7 @@ const Content = ({
               sortIndex={sortIndex}
               data={data}
               tag={tag}
+              click={click}
               setClick={setClick}
             />
           );
