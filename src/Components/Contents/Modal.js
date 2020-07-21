@@ -31,7 +31,6 @@ const TextBox = styled.div`
   height: 470px;
   padding: 0 0 30px 30px;
   background-color: ${(props) => props.theme.ModalBackground};
-  /* background-color: red; */
 `;
 
 const CloseBox = styled.div`
@@ -42,10 +41,11 @@ const CloseBox = styled.div`
 
 const Button = styled.div`
   display: flex;
-  width: 22px;
-  height: 30px;
+  width: 20px;
+  height: 25px;
   align-items: center;
-  padding-left: 8px;
+  padding-top: 5px;
+  padding-left: 10px;
   background-color: ${(props) => props.theme.MenuFocusBackground};
   cursor: pointer;
 `;
@@ -71,14 +71,32 @@ const TitleBox = styled.div`
 `;
 
 const CategoryExPlainDiv = styled.div`
+  margin-right: 6px;
   overflow-y: auto;
+  ::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 10px;
+    background-color: ${(props) => props.theme.ModalBackground};
+  }
+  ::-webkit-scrollbar-thumb {
+    height: 100px;
+    background-color: ${(props) => props.theme.ModalBackground};
+    border-radius: 10px;
+  }
+  :hover {
+    ::-webkit-scrollbar {
+      background-color: ${(props) => props.theme.ModalScrollBackground};
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: ${(props) => props.theme.MenuFocusBackground};
+    }
+  }
 `;
 
 const ExPlainDiv = styled.div`
-  min-height: 500px;
+  min-height: 1200px;
   color: ${(props) => props.theme.ModalText};
-  /* background-color: white; */
-  margin-right: 15px;
+  margin-right: 21px;
 `;
 
 const Category = styled.div`
@@ -106,7 +124,6 @@ const SocialButton = styled.div`
 `;
 
 const Modal = ({ width, height, click, setClick, modaldata }) => {
-  console.log(modaldata.img);
   const ClickEvent = () => {
     const root = document.querySelector("#root");
     root.classList.remove("noScroll");

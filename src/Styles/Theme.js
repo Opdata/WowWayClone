@@ -10,4 +10,5 @@ export default {
   PlusButtonBackground: "#f15a23",
   ModalBackground: "#3d3d3d",
   ModalText: "#a9a9a9",
+  ModalScrollBackground: "#2c2c2c",
 };
