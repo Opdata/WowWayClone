@@ -12,7 +12,7 @@ const ContentDiv = styled.div`
   );
   opacity: ${(props) =>
     props.tag === 5 ? 1 : props.dataTag === props.tag ? 1 : 0.1};
-  transition: opacity 0.4s, transform 0.6s;
+  transition: opacity 0.4s, transform 0.5s;
   ${(props) =>
     props.tag === 5
       ? `

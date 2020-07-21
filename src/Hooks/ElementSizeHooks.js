@@ -15,12 +15,18 @@ export default () => {
       setWidth(document.body.clientWidth);
     }
 
-    window.addEventListener("resize", clientSize);
+    window.addEventListener("resize", function () {
+      const delay = 300;
+      let timer = null;
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        clientSize();
+      }, delay);
+    });
 
     return () => {
       window.removeEventListener("resize", clientSize);
     };
   }, []);
-
   return { width, height };
 };

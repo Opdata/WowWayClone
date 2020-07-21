@@ -15,7 +15,6 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   height: fit-content;
-  overflow-x: hidden;
 `;
 
 const Box = styled.div`
