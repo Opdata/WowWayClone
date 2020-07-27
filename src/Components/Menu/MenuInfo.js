@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const MainMenu = styled(Link)`
   display: flex;
-  width: 215px;
+  width: 220px;
   height: 40px;
   padding-left: 30px;
   margin-left: -30px;

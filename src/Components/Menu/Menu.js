@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import button from "../../Assets/buttons.png";
 import MenuInfo from "./MenuInfo";
+
 const Box = styled.div`
   position: fixed;
   width: 290px;
   height: 100%;
   display: flex;
-
-  padding-right: 10px;
+  padding-right: 15px;
   color: ${(props) => props.theme.HeaderBackground};
   font-family: Arial, sans-serif;
   transform: translateX(${(props) => (props.state ? "0px" : "-280px")});
@@ -30,7 +31,6 @@ const MenuDiv = styled.div`
 const TitleBox = styled.div`
   display: flex;
   align-items: flex-end;
-  /* width: 100%; */
   height: 54px;
   font-size: 35px;
   font-weight: 600;
@@ -55,6 +55,35 @@ const Footer = styled.div`
 
 const FooterTextBox = styled.div`
   padding-top: 20px;
+`;
+
+const CloseBox = styled.div`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  top: 20px;
+  right: 0px;
+  padding-top: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  background-color: ${(props) => props.theme.MenuBackground};
+  transform: rotate(45deg);
+  z-index: 4;
+`;
+
+const CloseButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  transform: rotate(-45deg);
+  background-image: url(${(props) => props.url});
+  background-repeat: no-repeat;
+  background-position: ${(props) => (props.state === false ? -130 : -105)}px;
 `;
 
 const Menu = ({ state, setState, tag, setTag }) => {
@@ -95,6 +124,9 @@ const Menu = ({ state, setState, tag, setTag }) => {
           <FooterTextBox>WowWay © All rights reserved.</FooterTextBox>
         </Footer>
       </MenuDiv>
+      <CloseBox onClick={() => setState(!state)}>
+        <CloseButton url={button} state={state} />
+      </CloseBox>
     </Box>
   );
 };
