@@ -16,7 +16,7 @@ const Content = ({
 
   const Sort = () => {
     const emptyArray = [];
-    if (tag === 5) {
+    if (tag === 6) {
       result = result.concat(data);
     } else {
       CopyArray = data.concat();

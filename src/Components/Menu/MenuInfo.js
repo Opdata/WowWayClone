@@ -62,11 +62,12 @@ const LengthBox = styled.div`
 `;
 
 const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
-  const Print = Data.filter((x) => x.tag === 0).length;
-  const WebDesign = Data.filter((x) => x.tag === 1).length;
-  const Motion = Data.filter((x) => x.tag === 2).length;
-  const Logotype = Data.filter((x) => x.tag === 3).length;
-  const WordPress = Data.filter((x) => x.tag === 4).length;
+  const ReactTag = Data.filter((x) => x.tag === 0).length;
+  const Print = Data.filter((x) => x.tag === 1).length;
+  const WebDesign = Data.filter((x) => x.tag === 2).length;
+  const Motion = Data.filter((x) => x.tag === 3).length;
+  const Logotype = Data.filter((x) => x.tag === 4).length;
+  const WordPress = Data.filter((x) => x.tag === 5).length;
 
   return (
     <>
@@ -86,7 +87,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
               ? 8
               : text === "CONTACT US" && 9
           );
-          focus === true && setTag(5);
+          focus === true && setTag(6);
         }}
         focus={focus.toString()}
       >
@@ -98,26 +99,25 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
           <MainMenu
             to={"#"}
             onClick={() => {
-              setTag(5);
+              setTag(6);
             }}
-            subfocus={tag === 5 ? "true" : "false"}
+            subfocus={tag === 6 ? "true" : "false"}
           >
             <MenuBox Sub>
               All<LengthBox>({Data.length})</LengthBox>
               <ArrowBox
                 className={"Arrow"}
-                subfocus={tag === 5 ? "true" : "false"}
+                subfocus={tag === 6 ? "true" : "false"}
               />
             </MenuBox>
           </MainMenu>
-
           <MainMenu
             to={"#"}
             onClick={() => setTag(0)}
             subfocus={tag === 0 ? "true" : "false"}
           >
             <MenuBox Sub>
-              Print<LengthBox>({Print})</LengthBox>
+              React<LengthBox>({ReactTag})</LengthBox>
               <ArrowBox
                 className={"Arrow"}
                 subfocus={tag === 0 ? "true" : "false"}
@@ -130,7 +130,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
             subfocus={tag === 1 ? "true" : "false"}
           >
             <MenuBox Sub>
-              Web Design<LengthBox>({WebDesign})</LengthBox>
+              Print<LengthBox>({Print})</LengthBox>
               <ArrowBox
                 className={"Arrow"}
                 subfocus={tag === 1 ? "true" : "false"}
@@ -143,7 +143,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
             subfocus={tag === 2 ? "true" : "false"}
           >
             <MenuBox Sub>
-              Motion<LengthBox>({Motion})</LengthBox>
+              Web Design<LengthBox>({WebDesign})</LengthBox>
               <ArrowBox
                 className={"Arrow"}
                 subfocus={tag === 2 ? "true" : "false"}
@@ -156,7 +156,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
             subfocus={tag === 3 ? "true" : "false"}
           >
             <MenuBox Sub>
-              Logotype<LengthBox>({Logotype})</LengthBox>
+              Motion<LengthBox>({Motion})</LengthBox>
               <ArrowBox
                 className={"Arrow"}
                 subfocus={tag === 3 ? "true" : "false"}
@@ -169,10 +169,23 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
             subfocus={tag === 4 ? "true" : "false"}
           >
             <MenuBox Sub>
-              WordPress<LengthBox>({WordPress})</LengthBox>
+              Logotype<LengthBox>({Logotype})</LengthBox>
               <ArrowBox
                 className={"Arrow"}
                 subfocus={tag === 4 ? "true" : "false"}
+              />
+            </MenuBox>
+          </MainMenu>
+          <MainMenu
+            to={"#"}
+            onClick={() => setTag(5)}
+            subfocus={tag === 5 ? "true" : "false"}
+          >
+            <MenuBox Sub>
+              WordPress<LengthBox>({WordPress})</LengthBox>
+              <ArrowBox
+                className={"Arrow"}
+                subfocus={tag === 5 ? "true" : "false"}
               />
             </MenuBox>
           </MainMenu>

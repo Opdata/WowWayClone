@@ -11,10 +11,10 @@ const ContentDiv = styled.div`
     ${(props) => parseInt(props.sortIndex / props.cardCount) * props.height}px
   );
   opacity: ${(props) =>
-    props.tag === 5 ? 1 : props.dataTag === props.tag ? 1 : 0.1};
+    props.tag === 6 ? 1 : props.dataTag === props.tag ? 1 : 0.1};
   transition: opacity 0.4s, transform 0.5s;
   ${(props) =>
-    props.tag === 5
+    props.tag === 6
       ? `
     cursor: pointer;
     :hover {
@@ -61,11 +61,10 @@ const ContentDiv = styled.div`
 const ImgBox = styled.div`
   width: 100%;
   height: 100%;
-  /* background-color: ${(props) => props.color}; */
   background-image: url(${(props) => props.url});
-  background-position:center;
+  background-position: center;
   background-size: cover;
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
 `;
 
 const PlusButton = styled.div`

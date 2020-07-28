@@ -70,7 +70,7 @@ const TextDiv = styled.div`
 const TitleBox = styled.div`
   font-size: 18px;
   color: ${(props) => props.theme.HeaderBackground};
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   font-weight: 700;
 `;
 
@@ -98,7 +98,7 @@ const CategoryExPlainDiv = styled.div`
 `;
 
 const ExPlainDiv = styled.div`
-  min-height: 500px;
+  min-height: 400px;
   color: ${(props) => props.theme.ModalText};
   margin-right: 21px;
 `;
@@ -107,8 +107,8 @@ const Category = styled.div`
   font-size: 11px;
   padding-top: 10px;
   padding-bottom: 10px;
-  border-top: 1px solid ${(props) => props.theme.ModalText};
-  border-bottom: 1px solid ${(props) => props.theme.ModalText};
+  border-top: 1px solid ${(props) => props.theme.MenuLine};
+  border-bottom: 1px solid ${(props) => props.theme.MenuLine};
 `;
 
 const ExplainBox = styled.div`
@@ -173,7 +173,7 @@ const Modal = ({ width, height, click, setClick, modaldata }) => {
                   <TitleBox>{modaldata.Text}</TitleBox>
                   <CategoryExPlainDiv>
                     <ExPlainDiv>
-                      <Category>{modaldata.SubText}</Category>
+                      <Category>{modaldata.SubText.toUpperCase()}</Category>
                       <ExplainBox>
                         {modaldata.Explain.split("\n").map((line, index) => {
                           if (line === "") {
@@ -189,11 +189,11 @@ const Modal = ({ width, height, click, setClick, modaldata }) => {
                           })}
                         </ExplainBox>
                       )}
-                      {modaldata.Link !== undefined && (
+                      {modaldata.Link !== "" && (
                         <OutLinkBox href={modaldata.Link}>링크</OutLinkBox>
                       )}
                       <IconBox>
-                        {modaldata.Github !== undefined && (
+                        {modaldata.Github !== "" && (
                           <Icon href={modaldata.Github}>
                             <FaGithub
                               style={{
@@ -204,7 +204,7 @@ const Modal = ({ width, height, click, setClick, modaldata }) => {
                             />
                           </Icon>
                         )}
-                        {modaldata.Notion !== undefined && (
+                        {modaldata.Notion !== "" && (
                           <Icon href={modaldata.Notion}>
                             <FaStickyNote
                               style={{

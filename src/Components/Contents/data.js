@@ -1,12 +1,51 @@
-// 0: Print
-// 1: Web Design
-// 2: Motion
-// 3: Logotype
-// 4: WordPress
-// 5: All
+// 0: React
+// 1: Print
+// 2: Web Design
+// 3: Motion
+// 4: Logotype
+// 5: WordPress
+// 6: All
 
 import blockscan from "../../Assets/blockscan.png";
 import blockscanModal from "../../Assets/blockscanModal.jpg";
+import shadow from "../../Assets/shadow.jpg";
+import shadowModal from "../../Assets/shadowModal.jpg";
+import hug from "../../Assets/hug.jpg";
+import hugModal from "../../Assets/hugModal.jpg";
+import wowway from "../../Assets/wowway.jpg";
+import wowwayModal from "../../Assets/wowwayModal.png";
+import lovely from "../../Assets/lovely.jpg";
+import lovelyModal from "../../Assets/lovelyModal.jpg";
+import better from "../../Assets/better.jpg";
+import betterModal from "../../Assets/betterModal.jpg";
+import just from "../../Assets/just.jpg";
+import justModal from "../../Assets/justModal.jpg";
+import flat from "../../Assets/flat.jpg";
+import flatModal from "../../Assets/flatModal.jpg";
+import stationary from "../../Assets/stationary.jpg";
+import stationaryModal from "../../Assets/stationaryModal.jpg";
+import improbable from "../../Assets/improbable.jpg";
+import improbableModal from "../../Assets/improbableModal.jpg";
+import inmynewworld from "../../Assets/inmynewworld.jpg";
+import inmynewworldModal from "../../Assets/inmynewworldModal.jpg";
+import flat2 from "../../Assets/flat2.jpg";
+import flat2Modal from "../../Assets/flat2Modal.jpg";
+import move from "../../Assets/move.jpg";
+import moveModal from "../../Assets/moveModal.jpg";
+import perfect from "../../Assets/perfect.jpg";
+import perfectModal from "../../Assets/perfectModal.jpg";
+import business from "../../Assets/business.jpg";
+import businessModal from "../../Assets/businessModal.jpg";
+import more from "../../Assets/more.jpg";
+import moreModal from "../../Assets/moreModal.jpg";
+import self from "../../Assets/self.jpg";
+import selfModal from "../../Assets/selfModal.jpg";
+import stationary2 from "../../Assets/stationary2.jpg";
+import stationary2Modal from "../../Assets/stationary2Modal.jpg";
+import password from "../../Assets/password.jpg";
+import passwordModal from "../../Assets/passwordModal.jpg";
+import custom from "../../Assets/custom.jpg";
+import customModal from "../../Assets/customModal.jpg";
 
 export default [
   {
@@ -29,211 +68,306 @@ export default [
   },
   {
     id: 1,
-    img: "white",
-    tag: 1,
+    img: shadow,
+    tag: 2,
     Text: "Shadow – WP Theme",
-    SubText: "Web Design, Wordpress",
+    SubText: "Web Design, WordPress",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: shadowModal,
+      Explain:
+        "Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet ferm entumone non mi porta. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet. Aenean lacinia bibendum nulla sed consectetur. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet ferm entumone non mi porta. Aenean lacinia bibendum nulla sed consectetur.\n\nCras mattis consectetur purus sit amet. Aenean lacinia bibendum nulla sed consectetur.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 2,
-    img: "blue",
-    tag: 2,
+    img: hug,
+    tag: 4,
     Text: "Huge – WP Theme",
-    SubText: "Logotype, Wordpress",
+    SubText: "Logotype, WordPress",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: hugModal,
+      Explain:
+        "Using, auction cigar distinctly brilliant estate in acumen townhome, pedigree impresario manor wishlist rich. Marquis five-star, dignified educated fine cocktail vacation regal metropolitan repertoire impressive imported treasure brokerage using.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 3,
-    img: "darkgrey",
-    tag: 0,
+    img: wowway,
+    tag: 2,
     Text: "Wowway – WP Theme",
-    SubText: "Web Design, Wordpress",
+    SubText: "Web Design, WordPress",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: wowwayModal,
+      Explain:
+        "Using, auction cigar distinctly brilliant estate in acumen townhome, pedigree impresario manor wishlist rich. Marquis five-star, dignified educated fine cocktail vacation regal metropolitan repertoire impressive imported treasure brokerage using.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 4,
-    img: "lightgrey",
-    tag: 1,
-    Text: "Password Protected",
-    SubText: "Print",
+    img: lovely,
+    tag: 3,
+    Text: "Lovely Charts",
+    SubText: "Motion, Web Design",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: lovelyModal,
+      Explain:
+        "Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet ferm entumone non mi porta. Aenean lacinia bibendum nulla sed consectetur.\n\nCras mattis consectetur purus sit amet.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 5,
-    img: "green",
-    tag: 2,
-    Text: "Soundcloud",
-    SubText: "Web Design",
-    Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
-    },
-  },
-  {
-    id: 6,
-    img: "yellow",
-    tag: 3,
-    Text: "Custom Link",
-    SubText: "Motion",
-    Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
-    },
-  },
-  {
-    id: 7,
-    img: "purple",
-    tag: 0,
-    Text: "Lovely Charts",
-    SubText: "Motion, Web Design",
-    Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
-    },
-  },
-  {
-    id: 8,
-    img: "red",
+    img: better,
     tag: 1,
     Text: "Better Packaging",
     SubText: "Print",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: betterModal,
+      Explain:
+        "A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack!",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
-    id: 9,
-    img: "white",
+    id: 6,
+    img: just,
     tag: 2,
     Text: "Just Packaging",
     SubText: "Web Design",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: justModal,
+      Explain:
+        "Using, auction cigar distinctly brilliant estate in acumen townhome, pedigree impresario manor wishlist rich. Marquis five-star, dignified educated fine cocktail vacation regal metropolitan repertoire impressive imported treasure brokerage using. Benefactor, monogram blissfull politically wishlist luxury wishlist. Using, auction cigar distinctly brilliant estate in acumen townhome, pedigree impresario manor wishlist rich. Marquis five-star, dignified educated fine cocktail vacation regal metropolitan repertoire impressive imported treasure brokerage using. Benefactor, monogram blissfull politically wishlist luxury wishlist.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
+    },
+  },
+  {
+    id: 7,
+    img: flat,
+    tag: 4,
+    Text: "Flat Icons #1",
+    SubText: "Logotype",
+    Modal: {
+      img: flatModal,
+      Explain:
+        "Cuisine investments cultered, rich fashion yacht fashion noble five-star dignified benefactor. In yacht manor status rich charity diamond acumen travel elegant travel gifted benefiting. Presidential enthusiast butler panoramic acumen benefiting. Gifted guests rich cigar career, brilliant gentlemen philanthropic gentlemen acumen philanthropic purebred acumen benefactor sterling.\n\nCuisine invesIn yacht manor status rich charity diamond acumen travel elegant travel gifted benefiting. Presidential enthusiast butler panoramic acumen benefiting. Gifted guests rich cigar career, brilliant gentlemen philanthropic gentlemen acumen philanthropic purebred acumen benefactor sterling.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
+    },
+  },
+  {
+    id: 8,
+    img: stationary,
+    tag: 1,
+    Text: "Stationary Branding #2",
+    SubText: "Print",
+    Modal: {
+      img: stationaryModal,
+      Explain:
+        "Client\n\nHe could see from the bed that it had been set for four o’clock as it should have been it certain. It was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven. Had the alarm clock not rung?\n\nChallenge\n\nIt was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven. Had the alarm clock not rung? He could see from the bed that it had been set for four o’clock as it should have been; it certainly must have rung. Yes, but was it possible to quietly sleep.\n\nResult\n\nIt was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven. Had the alarm clock not rung? He could see from the bed that it had been set for four o’clock as it should have been it certain it was half .",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
+    },
+  },
+  {
+    id: 9,
+    img: improbable,
+    tag: 4,
+    Text: "Improbable Identity",
+    SubText: "Logotype",
+    Modal: {
+      img: improbableModal,
+      Explain:
+        "Using, auction cigar distinctly brilliant estate in acumen townhome, pedigree impresario manor wishlist rich. Marquis five-star, dignified educated fine cocktail vacation regal metropolitan repertoire impressive imported treasure brokerage using. Benefactor, monogram blissfull politically wishlist luxury wishlist. Using, auction cigar distinctly brilliant estate in acumen townhome, pedigree impresario manor wishlist rich. Marquis five-star, dignified educated fine cocktail vacation regal metropolitan repertoire impressive imported treasure brokerage using. Benefactor, monogram blissfull politically wishlist luxury wishlist.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 10,
-    img: "yellow",
+    img: inmynewworld,
     tag: 3,
-    Text: "Flat Icons #1",
-    SubText: "Logotype",
+    Text: "In My New World",
+    SubText: "Motion",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: inmynewworldModal,
+      Explain:
+        "Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet ferm entumone non mi porta. Aenean lacinia bibendum nulla sed consectetur.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 11,
-    img: "black",
-    tag: 0,
-    Text: "Stationary Branding #2",
+    img: flat2,
+    tag: 1,
+    Text: "Flat Icons #2",
     SubText: "Print",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: flat2Modal,
+      Explain:
+        "Using, auction cigar distinctly brilliant estate in acumen townhome, pedigree impresario manor wishlist rich. Marquis five-star, dignified educated fine cocktail vacation regal metropolitan repertoire impressive imported treasure brokerage using. Benefactor, monogram blissfull politically wishlist luxury wishlist. Using, auction cigar distinctly brilliant estate in acumen townhome, pedigree impresario manor wishlist rich. Marquis five-star, dignified educated fine cocktail vacation regal metropolitan repertoire impressive imported treasure brokerage using. Benefactor, monogram blissfull politically wishlist luxury wishlist.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 12,
-    img: "white",
-    tag: 1,
-    Text: "Improbable Identity",
-    SubText: "Logotype",
+    img: move,
+    tag: 3,
+    Text: "Move",
+    SubText: "Motion, Web Design",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: moveModal,
+      Explain:
+        "I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 13,
-    img: "blue",
-    tag: 2,
-    Text: "In My New World",
-    SubText: "Motion",
+    img: perfect,
+    tag: 4,
+    Text: "Perfect Packaging",
+    SubText: "Logotype, Print",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: perfectModal,
+      Explain:
+        "Cuisine investments cultered, rich fashion yacht fashion noble five-star dignified benefactor. In yacht manor status rich charity diamond acumen travel elegant travel gifted benefiting. Presidential enthusiast butler panoramic acumen benefiting. Gifted guests rich cigar career, brilliant gentlemen philanthropic gentlemen acumen philanthropic purebred acumen benefactor sterling.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 14,
-    img: "grey",
-    tag: 0,
-    Text: "Flat Icons #2",
-    SubText: "Print",
+    img: business,
+    tag: 4,
+    Text: "Business Cards",
+    SubText: "Logotype, Print",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: businessModal,
+      Explain:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl orci, condim entum ultrices consequat eu, vehicula ac mauris. Ut adipiscing, leo nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 15,
-    img: "lightgrey",
-    tag: 4,
-    Text: "Move",
-    SubText: "Motion, Web Design",
+    img: more,
+    tag: 3,
+    Text: "More Videos",
+    SubText: "Motion",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: moreModal,
+      Explain:
+        "By sharing information about products you use, you are also improving recommendations for others. Recommendations are better when they’re based on more data.\n\nWith smart data analysis we discover which products are used by other people with a skin just like yours. Individuals with the same skin properties find same products fitting them best.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 16,
-    img: "green",
-    tag: 2,
-    Text: "Perfect Packaging",
-    SubText: "Logotype, Print",
+    img: self,
+    tag: 3,
+    Text: "Self Hosted Video",
+    SubText: "Motion",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: selfModal,
+      Explain:
+        "Cuisine investments cultered, rich fashion yacht fashion noble five-star dignified benefactor. In yacht manor status rich charity diamond acumen travel elegant travel gifted benefiting.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 17,
-    img: "purple",
-    tag: 0,
-    Text: "Business Cards",
-    SubText: "Logotype, Print",
+    img: stationary2,
+    tag: 5,
+    Text: "Stationary Binding #2",
+    SubText: "WordPress",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: stationary2Modal,
+      Explain:
+        "Client\n\nHe could see from the bed that it had been set for four o’clock as it should have been it certain. It was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven. Had the alarm clock not rung?\n\nChallenge\n\nIt was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven. Had the alarm clock not rung? He could see from the bed that it had been set for four o’clock as it should have been; it certainly must have rung. Yes, but was it possible to quietly sleep.\n\nResult\n\nIt was half past six and the hands were quietly moving forwards, it was even later than half past, more like quarter to seven. Had the alarm clock not rung? He could see from the bed that it had been set for four o’clock as it should have been it certain it was half .",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 18,
-    img: "blue",
+    img: password,
     tag: 1,
-    Text: "More Videos",
-    SubText: "Motion",
+    Text: "Password Protected",
+    SubText: "Print",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: passwordModal,
+      Explain:
+        "ProtectedText is an free online notepad with password, where you can securely save your notes on the web.\n\nIt's a secure notepad with password, for all your notes, ideas, to-do lists, scripts, etc. You can store notes online at ProtectedText.com/ANY_SITE_YOU_TYPE and access from any web browser. It's free and also without ads and tracking, and you don't even have to register or have any kind of account. Store your notes anonymously and encrypted in this simple and secure free online notepad. You can also use our Android app to access your notes conveniently from your Android device.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
   {
     id: 19,
-    img: "black",
-    tag: 4,
-    Text: "Self Hosted Video",
-    SubText: "Motion",
+    img: custom,
+    tag: 5,
+    Text: "Custom Link",
+    SubText: "WordPress",
     Modal: {
-      Explain: "본문 테스트",
-      Link: "test",
+      img: customModal,
+      Explain:
+        "If you’ve ever added hyperlinks to a message, you probably already know that URLs can get long and ugly. You can change the link text to something easier to read that tells people what the link is about.",
+      Tech: "",
+      Link: "",
+      Github: "",
+      Notion: "",
     },
   },
 ];
