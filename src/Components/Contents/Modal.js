@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import button from "../../Assets/buttons.png";
+import { FaGithub, FaStickyNote } from "react-icons/fa";
 import Footer from "./Footer";
 
 const Wrapper = styled.div`
@@ -24,6 +25,8 @@ const ImgBox = styled.div`
   width: 750px;
   height: 500px;
   background-image: url(${(props) => props.url});
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 const TextBox = styled.div`
@@ -68,6 +71,7 @@ const TitleBox = styled.div`
   font-size: 18px;
   color: ${(props) => props.theme.HeaderBackground};
   margin-bottom: 15px;
+  font-weight: 700;
 `;
 
 const CategoryExPlainDiv = styled.div`
@@ -94,7 +98,7 @@ const CategoryExPlainDiv = styled.div`
 `;
 
 const ExPlainDiv = styled.div`
-  min-height: 1200px;
+  min-height: 500px;
   color: ${(props) => props.theme.ModalText};
   margin-right: 21px;
 `;
@@ -108,19 +112,41 @@ const Category = styled.div`
 `;
 
 const ExplainBox = styled.div`
+  display: flex;
+  flex-direction: column;
   font-size: 13px;
   line-height: 1.5;
   margin: 18px 0;
 `;
 
-const OutLinkBox = styled.div`
+const OutLinkBox = styled.a`
   /*  */
+  display: flex;
   font-size: 13px;
-  margin: 18px 0;
+  margin: 25px 0;
+  color: ${(props) => props.theme.HeaderBackground};
+  text-decoration: none;
+  cursor: pointer;
 `;
 
-const SocialButton = styled.div`
-  /*  */
+const IconBox = styled.div`
+  display: flex;
+  height: fit-content;
+  margin-bottom: 25px;
+`;
+
+const Icon = styled.a`
+  display: flex;
+  align-items: center;
+
+  color: ${(props) => props.theme.IconColor};
+  opacity: 0.5;
+
+  :hover {
+    transition: 0.3s linear;
+    color: ${(props) => props.theme.MenuFocusBackground};
+    opacity: 1;
+  }
 `;
 
 const Modal = ({ width, height, click, setClick, modaldata }) => {
@@ -129,31 +155,76 @@ const Modal = ({ width, height, click, setClick, modaldata }) => {
     root.classList.remove("noScroll");
     setClick(false);
   };
+
   return (
     <>
-      <Wrapper width={width} height={height} click={click}>
-        <ModalBox>
-          <ImgBox url={modaldata.img} />
-          <TextBox>
-            <CloseBox>
-              <Button onClick={() => ClickEvent()}>
-                <ButtonImage url={button} />
-              </Button>
-            </CloseBox>
-            <TextDiv>
-              <TitleBox>{modaldata.Text}</TitleBox>
-              <CategoryExPlainDiv>
-                <ExPlainDiv>
-                  <Category>{modaldata.SubText}</Category>
-                  <ExplainBox>{modaldata.Explain}</ExplainBox>
-                  <OutLinkBox>{modaldata.Link}</OutLinkBox>
-                </ExPlainDiv>
-              </CategoryExPlainDiv>
-            </TextDiv>
-          </TextBox>
-        </ModalBox>
-      </Wrapper>
-      {click && <Footer />}
+      {modaldata !== false && (
+        <>
+          <Wrapper width={width} height={height} click={click}>
+            <ModalBox>
+              <ImgBox url={modaldata.Modalimg} />
+              <TextBox>
+                <CloseBox>
+                  <Button onClick={() => ClickEvent()}>
+                    <ButtonImage url={button} />
+                  </Button>
+                </CloseBox>
+                <TextDiv>
+                  <TitleBox>{modaldata.Text}</TitleBox>
+                  <CategoryExPlainDiv>
+                    <ExPlainDiv>
+                      <Category>{modaldata.SubText}</Category>
+                      <ExplainBox>
+                        {modaldata.Explain.split("\n").map((line, index) => {
+                          if (line === "") {
+                            return <br key={index} />;
+                          }
+                          return <span key={index}>{line}</span>;
+                        })}
+                      </ExplainBox>
+                      {modaldata.Tech !== undefined && (
+                        <ExplainBox>
+                          {modaldata.Tech.split("\n").map((line, index) => {
+                            return <span key={index}>{line}</span>;
+                          })}
+                        </ExplainBox>
+                      )}
+                      {modaldata.Link !== undefined && (
+                        <OutLinkBox href={modaldata.Link}>링크</OutLinkBox>
+                      )}
+                      <IconBox>
+                        {modaldata.Github !== undefined && (
+                          <Icon href={modaldata.Github}>
+                            <FaGithub
+                              style={{
+                                width: "20px",
+                                height: "20px",
+                                paddingRight: "5px",
+                              }}
+                            />
+                          </Icon>
+                        )}
+                        {modaldata.Notion !== undefined && (
+                          <Icon href={modaldata.Notion}>
+                            <FaStickyNote
+                              style={{
+                                width: "20px",
+                                height: "20px",
+                                paddingRight: "5px",
+                              }}
+                            />
+                          </Icon>
+                        )}
+                      </IconBox>
+                    </ExPlainDiv>
+                  </CategoryExPlainDiv>
+                </TextDiv>
+              </TextBox>
+            </ModalBox>
+          </Wrapper>
+          {click && <Footer />}
+        </>
+      )}
     </>
   );
 };

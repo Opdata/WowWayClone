@@ -61,7 +61,11 @@ const ContentDiv = styled.div`
 const ImgBox = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${(props) => props.color};
+  /* background-color: ${(props) => props.color}; */
+  background-image: url(${(props) => props.url});
+  background-position:center;
+  background-size: cover;
+  background-repeat:no-repeat;
 `;
 
 const PlusButton = styled.div`
@@ -116,11 +120,26 @@ const Card = ({
   setClick,
   setModalData,
 }) => {
-  const ClickEvent = (img, Text, SubText, { Explain, Link }) => {
+  const ClickEvent = (
+    img,
+    Text,
+    SubText,
+    { img: Modalimg, Explain, Tech, Link, Github, Notion }
+  ) => {
     const root = document.querySelector("#root");
     root.classList.add("noScroll");
     setClick(true);
-    setModalData({ img, Text, SubText, Explain, Link });
+    setModalData({
+      img,
+      Text,
+      SubText,
+      Modalimg,
+      Explain,
+      Tech,
+      Link,
+      Github,
+      Notion,
+    });
   };
 
   return (
@@ -133,7 +152,7 @@ const Card = ({
       dataTag={data.tag}
       onClick={() => ClickEvent(data.img, data.Text, data.SubText, data.Modal)}
     >
-      <ImgBox className={"imgbox"} color={data.img}></ImgBox>
+      <ImgBox className={"imgbox"} url={data.img}></ImgBox>
       <TextBox className={"textbox"}>
         <PlusButton className={"plusbutton"} url={Plus}></PlusButton>
         <TextDiv
