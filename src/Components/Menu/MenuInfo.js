@@ -61,7 +61,7 @@ const LengthBox = styled.div`
   padding: 2px;
 `;
 
-const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
+const MenuInfo = ({ text, tag, setTag, focus, setFocus, click, setClick }) => {
   const ReactTag = Data.filter((x) => x.tag === 0).length;
   const Print = Data.filter((x) => x.tag === 1).length;
   const WebDesign = Data.filter((x) => x.tag === 2).length;
@@ -80,6 +80,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
             : text === "CONTACT US" && "/contact-us"
         }
         onClick={() => {
+          click === true && setClick(false);
           setFocus(
             text === "PORTPOLIO"
               ? 1
@@ -87,7 +88,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
               ? 8
               : text === "CONTACT US" && 9
           );
-          focus === true && setTag(6);
+          text === "PORTPOLIO" && focus === true && setTag(6);
         }}
         focus={focus.toString()}
       >
@@ -99,6 +100,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
           <MainMenu
             to={"#"}
             onClick={() => {
+              setClick(false);
               setTag(6);
             }}
             subfocus={tag === 6 ? "true" : "false"}
@@ -113,7 +115,10 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
           </MainMenu>
           <MainMenu
             to={"#"}
-            onClick={() => setTag(0)}
+            onClick={() => {
+              setClick(false);
+              setTag(0);
+            }}
             subfocus={tag === 0 ? "true" : "false"}
           >
             <MenuBox Sub>
@@ -126,7 +131,10 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
           </MainMenu>
           <MainMenu
             to={"#"}
-            onClick={() => setTag(1)}
+            onClick={() => {
+              setClick(false);
+              setTag(1);
+            }}
             subfocus={tag === 1 ? "true" : "false"}
           >
             <MenuBox Sub>
@@ -139,7 +147,10 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
           </MainMenu>
           <MainMenu
             to={"#"}
-            onClick={() => setTag(2)}
+            onClick={() => {
+              setClick(false);
+              setTag(2);
+            }}
             subfocus={tag === 2 ? "true" : "false"}
           >
             <MenuBox Sub>
@@ -152,7 +163,10 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
           </MainMenu>
           <MainMenu
             to={"#"}
-            onClick={() => setTag(3)}
+            onClick={() => {
+              setClick(false);
+              setTag(3);
+            }}
             subfocus={tag === 3 ? "true" : "false"}
           >
             <MenuBox Sub>
@@ -165,7 +179,10 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
           </MainMenu>
           <MainMenu
             to={"#"}
-            onClick={() => setTag(4)}
+            onClick={() => {
+              setClick(false);
+              setTag(4);
+            }}
             subfocus={tag === 4 ? "true" : "false"}
           >
             <MenuBox Sub>
@@ -178,7 +195,10 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus }) => {
           </MainMenu>
           <MainMenu
             to={"#"}
-            onClick={() => setTag(5)}
+            onClick={() => {
+              setClick(false);
+              setTag(5);
+            }}
             subfocus={tag === 5 ? "true" : "false"}
           >
             <MenuBox Sub>

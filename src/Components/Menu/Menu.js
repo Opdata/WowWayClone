@@ -86,7 +86,7 @@ const CloseButton = styled.div`
   background-position: ${(props) => (props.state === false ? -130 : -105)}px;
 `;
 
-const Menu = ({ state, setState, tag, setTag }) => {
+const Menu = ({ state, setState, tag, setTag, click, setClick }) => {
   const [focus, setFocus] = useState(1);
 
   return (
@@ -108,16 +108,22 @@ const Menu = ({ state, setState, tag, setTag }) => {
             focus={focus === 1 ? true : false}
             tag={focus === 1 ? tag : false}
             setTag={focus === 1 && setTag}
+            click={click}
+            setClick={setClick}
           ></MenuInfo>
           <MenuInfo
             text={"OUR BLOG"}
             setFocus={setFocus}
+            click={click}
             focus={focus === 8 ? true : false}
+            setClick={click === true && setClick}
           ></MenuInfo>
           <MenuInfo
             text={"CONTACT US"}
             setFocus={setFocus}
+            click={click}
             focus={focus === 9 ? true : false}
+            setClick={click === true && setClick}
           ></MenuInfo>
         </TitleMenuDiv>
         <Footer>

@@ -101,7 +101,14 @@ const App = () => {
       <GlobalStyle />
       <BrowserRouter>
         <Wrapper>
-          <Menu state={state} setState={setState} tag={tag} setTag={setTag} />
+          <Menu
+            state={state}
+            setState={setState}
+            tag={tag}
+            setTag={setTag}
+            click={click}
+            setClick={setClick}
+          />
           <Box
             state={state}
             width={Width}
