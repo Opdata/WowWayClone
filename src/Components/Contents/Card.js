@@ -149,10 +149,12 @@ const Card = ({
       cardCount={cardCount}
       tag={tag}
       dataTag={data.tag}
-      onClick={() =>
-        data.tag === tag &&
-        ClickEvent(data.img, data.Text, data.SubText, data.Modal)
-      }
+      onClick={() => {
+        tag === 6
+          ? ClickEvent(data.img, data.Text, data.SubText, data.Modal)
+          : data.tag === tag &&
+            ClickEvent(data.img, data.Text, data.SubText, data.Modal);
+      }}
     >
       <ImgBox className={"imgbox"} url={data.img}></ImgBox>
       <TextBox className={"textbox"}>
