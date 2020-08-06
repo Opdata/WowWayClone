@@ -15,17 +15,12 @@ const Content = ({
   let CopyArray;
 
   const Sort = () => {
-    const emptyArray = [];
     if (tag === 6) {
       result = result.concat(data);
     } else {
       CopyArray = data.concat();
-      CopyArray.map(
-        (data, index) =>
-          data.tag === tag && emptyArray.push(CopyArray.splice(index, 1)[0])
-      );
-      result = [];
-      result = emptyArray.concat(CopyArray);
+      result = CopyArray.filter((data) => data.tag === tag);
+      result = result.concat(CopyArray.filter((data) => data.tag !== tag));
     }
     return result;
   };
