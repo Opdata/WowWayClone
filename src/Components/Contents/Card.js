@@ -11,7 +11,7 @@ const ContentDiv = styled.div`
     ${(props) => parseInt(props.sortIndex / props.cardCount) * props.height}px
   );
   opacity: ${(props) =>
-    props.tag === 6 ? 1 : props.dataTag === props.tag ? 1 : 0.1};
+    props.tag === 6 ? 0.7 : props.dataTag === props.tag ? 0.7 : 0.1};
   transition: opacity 0.4s, transform 0.5s;
   ${(props) =>
     props.tag === 6
