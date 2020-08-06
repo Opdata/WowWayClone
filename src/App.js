@@ -59,6 +59,7 @@ const OpacityBackground = styled.div`
 
 const App = () => {
   const [state, setState] = useState(false);
+  const [focus, setFocus] = useState(1);
   const [click, setClick] = useState(false);
   const [modaldata, setModalData] = useState();
   const [tag, setTag] = useState(6);
@@ -104,10 +105,13 @@ const App = () => {
           <Menu
             state={state}
             setState={setState}
+            focus={focus}
+            setFocus={setFocus}
             tag={tag}
             setTag={setTag}
             click={click}
             setClick={setClick}
+            setModalData={setModalData}
           />
           <Box
             state={state}
@@ -122,6 +126,7 @@ const App = () => {
                 <Modal
                   width={Width}
                   height={height}
+                  focus={focus}
                   click={click}
                   setClick={setClick}
                   modaldata={modaldata !== undefined && modaldata}

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Plus from "../../Assets/plus.png";
+import { ScrollControlAdd } from "../../helper/ScrollControl";
 
 const ContentDiv = styled.div`
   position: absolute;
@@ -125,8 +126,7 @@ const Card = ({
     SubText,
     { img: Modalimg, Explain, Tech, Link, Github, Notion }
   ) => {
-    const root = document.querySelector("#root");
-    root.classList.add("noScroll");
+    ScrollControlAdd();
     setClick(true);
     setModalData({
       img,

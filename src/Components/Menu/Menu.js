@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import button from "../../Assets/buttons.png";
 import MenuInfo from "./MenuInfo";
@@ -86,9 +86,17 @@ const CloseButton = styled.div`
   background-position: ${(props) => (props.state === false ? -130 : -105)}px;
 `;
 
-const Menu = ({ state, setState, tag, setTag, click, setClick }) => {
-  const [focus, setFocus] = useState(1);
-
+const Menu = ({
+  state,
+  setState,
+  focus,
+  setFocus,
+  tag,
+  setTag,
+  click,
+  setClick,
+  setModalData,
+}) => {
   return (
     <Box
       state={state}
@@ -115,15 +123,17 @@ const Menu = ({ state, setState, tag, setTag, click, setClick }) => {
             text={"OUR BLOG"}
             setFocus={setFocus}
             click={click}
-            focus={focus === 8 ? true : false}
-            setClick={click === true && setClick}
+            focus={focus === 2 ? true : false}
+            setClick={setClick}
+            setModalData={setModalData}
           ></MenuInfo>
           <MenuInfo
             text={"CONTACT US"}
             setFocus={setFocus}
             click={click}
-            focus={focus === 9 ? true : false}
-            setClick={click === true && setClick}
+            focus={focus === 3 ? true : false}
+            setClick={setClick}
+            setModalData={setModalData}
           ></MenuInfo>
         </TitleMenuDiv>
         <Footer>

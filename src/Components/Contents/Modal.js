@@ -1,8 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import button from "../../Assets/buttons.png";
+import Blog from "../../Assets/blog.jpg";
+import Mail from "../../Assets/mail.jpg";
 import { FaGithub, FaStickyNote } from "react-icons/fa";
 import Footer from "./Footer";
+import {
+  ScrollControlAdd,
+  ScrollControlRemove,
+} from "../../helper/ScrollControl";
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,7 +29,7 @@ const ModalBox = styled.div`
 
 const ImgBox = styled.div`
   width: 750px;
-  height: 500px;
+  height: ${(props) => (props.port === true ? 500 : 498)}px;
   background-image: url(${(props) => props.url});
   background-size: cover;
   background-repeat: no-repeat;
@@ -120,7 +126,6 @@ const ExplainBox = styled.div`
 `;
 
 const OutLinkBox = styled.a`
-  /*  */
   display: flex;
   font-size: 13px;
   margin: 25px 0;
@@ -149,23 +154,114 @@ const Icon = styled.a`
   }
 `;
 
-const Modal = ({ width, height, click, setClick, modaldata }) => {
-  const ClickEvent = () => {
-    const root = document.querySelector("#root");
-    root.classList.remove("noScroll");
-    setClick(false);
-  };
-
+const Modal = ({ width, height, focus, click, setClick, modaldata }) => {
+  focus !== 1 && ScrollControlAdd();
   return (
     <>
-      {modaldata !== false && (
-        <>
-          <Wrapper width={width} height={height} click={click}>
-            <ModalBox>
-              <ImgBox url={modaldata.Modalimg} />
+      <Wrapper width={width} height={height} click={click}>
+        <ModalBox>
+          {modaldata === false && (
+            <>
+              {focus === 2 && (
+                <>
+                  <ImgBox url={Blog} port={false} />
+                  <TextBox>
+                    <CloseBox>
+                      <Button
+                        onClick={() => {
+                          ScrollControlRemove();
+                          setClick(false);
+                        }}
+                      >
+                        <ButtonImage url={button} />
+                      </Button>
+                    </CloseBox>
+                    <TextDiv>
+                      <TitleBox>Blog</TitleBox>
+                      <CategoryExPlainDiv>
+                        <ExPlainDiv>
+                          <Category>
+                            {"my blog for notion".toUpperCase()}
+                          </Category>
+                          <ExplainBox>
+                            노션을 통해 블로그를 운영하고 있습니다.
+                          </ExplainBox>
+                          <ExplainBox>
+                            부족한 개발 지식 및 컴퓨터 공학을 공부해오며 많은
+                            양은 아니지만 자기발전과 복습을 위해 기록하는 습관을
+                            가져오고 있습니다.
+                          </ExplainBox>
+                          <ExplainBox>
+                            비록 지금은 미비하지만, 꾸준히 기록하여 협업이나
+                            커뮤니케이션을 할 때 정보의 공유와 협업능률의 향상을
+                            위해 큰 보탬이 되는것이 블로그의 목표입니다.
+                          </ExplainBox>
+                          <OutLinkBox
+                            href={
+                              "https://www.notion.so/pb0364/Study-Record-9b7b4bc6e56c4ccd9eec1910578bfc7b"
+                            }
+                          >
+                            Blog 바로가기
+                          </OutLinkBox>
+                        </ExPlainDiv>
+                      </CategoryExPlainDiv>
+                    </TextDiv>
+                  </TextBox>
+                </>
+              )}
+              {focus === 3 && (
+                <>
+                  <ImgBox url={Mail} port={false} />
+                  <TextBox>
+                    <CloseBox>
+                      <Button
+                        onClick={() => {
+                          ScrollControlRemove();
+                          setClick(false);
+                        }}
+                      >
+                        <ButtonImage url={button} />
+                      </Button>
+                    </CloseBox>
+                    <TextDiv>
+                      <TitleBox>Contact</TitleBox>
+                      <CategoryExPlainDiv>
+                        <ExPlainDiv>
+                          <Category>{"contact mail".toUpperCase()}</Category>
+                          <ExplainBox>
+                            이메일을 통하여 연락부탁드립니다.
+                          </ExplainBox>
+                          <ExplainBox>pb03641@gmail.com</ExplainBox>
+                          <IconBox>
+                            <Icon href={`https://github.com/Opdata`}>
+                              <FaGithub
+                                style={{
+                                  width: "20px",
+                                  height: "20px",
+                                  paddingRight: "5px",
+                                }}
+                              />
+                            </Icon>
+                          </IconBox>
+                        </ExPlainDiv>
+                      </CategoryExPlainDiv>
+                    </TextDiv>
+                  </TextBox>
+                </>
+              )}
+            </>
+          )}
+          {modaldata !== false && (
+            <>
+              <ImgBox url={modaldata.Modalimg} port={true} />
               <TextBox>
                 <CloseBox>
-                  <Button onClick={() => ClickEvent()}>
+                  <Button
+                    onClick={() => {
+                      ScrollControlRemove();
+                      setClick(false);
+                    }}
+                  >
                     <ButtonImage url={button} />
                   </Button>
                 </CloseBox>
@@ -220,11 +316,11 @@ const Modal = ({ width, height, click, setClick, modaldata }) => {
                   </CategoryExPlainDiv>
                 </TextDiv>
               </TextBox>
-            </ModalBox>
-          </Wrapper>
-          {click && <Footer />}
-        </>
-      )}
+            </>
+          )}
+        </ModalBox>
+      </Wrapper>
+      {click && <Footer />}
     </>
   );
 };

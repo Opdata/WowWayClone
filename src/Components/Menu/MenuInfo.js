@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Data from "../Contents/data";
 import { Link } from "react-router-dom";
-
+import { ScrollControlRemove } from "../../helper/ScrollControl";
 const MainMenu = styled(Link)`
   display: flex;
   width: 220px;
@@ -61,7 +61,16 @@ const LengthBox = styled.div`
   padding: 2px;
 `;
 
-const MenuInfo = ({ text, tag, setTag, focus, setFocus, click, setClick }) => {
+const MenuInfo = ({
+  text,
+  tag,
+  setTag,
+  focus,
+  setFocus,
+  click,
+  setClick,
+  setModalData,
+}) => {
   const ReactTag = Data.filter((x) => x.tag === 0).length;
   const Print = Data.filter((x) => x.tag === 1).length;
   const WebDesign = Data.filter((x) => x.tag === 2).length;
@@ -76,20 +85,23 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus, click, setClick }) => {
           text === "PORTPOLIO"
             ? "/"
             : text === "OUR BLOG"
-            ? "/blog"
-            : text === "CONTACT US" && "/contact-us"
+            ? "#"
+            : text === "CONTACT US" && "#"
         }
-        onClick={() => {
-          click === true && setClick(false);
+        onClick={() => (
+          text === "PORTPOLIO"
+            ? click === true && setClick(false)
+            : (setModalData(false), setClick(true)),
           setFocus(
             text === "PORTPOLIO"
               ? 1
               : text === "OUR BLOG"
-              ? 8
-              : text === "CONTACT US" && 9
-          );
-          text === "PORTPOLIO" && focus === true && setTag(6);
-        }}
+              ? 2
+              : text === "CONTACT US" && 3
+          ),
+          text === "PORTPOLIO" && focus === true && setTag(6),
+          ScrollControlRemove()
+        )}
         focus={focus.toString()}
       >
         <MenuBox>{text}</MenuBox>
@@ -102,6 +114,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus, click, setClick }) => {
             onClick={() => {
               setClick(false);
               setTag(6);
+              ScrollControlRemove();
             }}
             subfocus={tag === 6 ? "true" : "false"}
           >
@@ -118,6 +131,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus, click, setClick }) => {
             onClick={() => {
               setClick(false);
               setTag(0);
+              ScrollControlRemove();
             }}
             subfocus={tag === 0 ? "true" : "false"}
           >
@@ -134,6 +148,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus, click, setClick }) => {
             onClick={() => {
               setClick(false);
               setTag(1);
+              ScrollControlRemove();
             }}
             subfocus={tag === 1 ? "true" : "false"}
           >
@@ -150,6 +165,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus, click, setClick }) => {
             onClick={() => {
               setClick(false);
               setTag(2);
+              ScrollControlRemove();
             }}
             subfocus={tag === 2 ? "true" : "false"}
           >
@@ -166,6 +182,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus, click, setClick }) => {
             onClick={() => {
               setClick(false);
               setTag(3);
+              ScrollControlRemove();
             }}
             subfocus={tag === 3 ? "true" : "false"}
           >
@@ -182,6 +199,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus, click, setClick }) => {
             onClick={() => {
               setClick(false);
               setTag(4);
+              ScrollControlRemove();
             }}
             subfocus={tag === 4 ? "true" : "false"}
           >
@@ -198,6 +216,7 @@ const MenuInfo = ({ text, tag, setTag, focus, setFocus, click, setClick }) => {
             onClick={() => {
               setClick(false);
               setTag(5);
+              ScrollControlRemove();
             }}
             subfocus={tag === 5 ? "true" : "false"}
           >
