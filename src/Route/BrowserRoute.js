@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Content from "../Components/Contents/Contents";
-import Empty from "../Components/Contents/Empty";
 
 const BrowserRoute = ({
   width,
@@ -27,8 +26,6 @@ const BrowserRoute = ({
           setModalData={setModalData}
         />
       </Route>
-      <Route exact path="/blog" component={Empty} />
-      <Route exact path="/contact-us" component={Empty} />
     </Switch>
   );
 };
