@@ -60,7 +60,7 @@ export default [
         "이더리움 블록체인 익스플로러 클론코딩\n\nEtherScan.io를 클론코딩한 프로젝트로서 이더리움 블록체인에서 일어나고 있는 모든 활동과 정보를 쉽게 검색할 수 있는 사이트 입니다.\n\n단순히 기능 개발에서 멈추지 않고, 실무에서 사용하는 기술과 협업툴을 적용하였습니다.",
       Tech:
         "Tech Stack\n- React.js\n- Node.js\n- Mysql\n- Sequelize\n- Express\n- Swagger\n- Jenkins\n- Crontab\n- Nginx\n- Docker\n",
-      Link: "https://wowwayclone.netlify.app/",
+      Link: "https://blockscan.netlify.app/",
       Github: "https://github.com/IGMD/blockscan",
       Notion:
         "https://www.notion.so/IGMM-BLOCK-EXPLORER-88a81bf42fbc40b2b614724562dde11b",
